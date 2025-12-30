@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curriculum Vitae | Matthias Dogbatsey</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+  <style>
+    /* Optional: Make the iframe responsive */
+    .pdf-frame {
+      width: 100%;
+      height: 800px; /* Taller height for better readability */
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body class="page" data-page="cv">
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="nav-name">Matthias&nbsp;Dogbatsey</div>
+       <!-- <div class="nav-title">Scientific Computing, Mathematical Modeling &amp; Mathematical Biology</div> -->
+      </div>
+      <div class="nav-links">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="research.html" data-page="research">Research</a>
+        <a href="publications.html" data-page="publications">Publications</a>
+        <a href="teaching.html" data-page="teaching">Teaching</a>
+        <a href="talk.html" data-page="talk">Talk</a>
+        <a href="service.html" data-page="service">Service</a>
+        <a href="cv.html" data-page="cv">CV</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+      </div>
+      <div class="theme-toggle">
+        <button type="button" data-theme-toggle></button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading">Curriculum Vitae</h1>
+        <p class="section-subtitle">
+          A complete record of my academic appointments, publications, teaching, mentoring, and service.
+        </p>
+
+        <div class="card">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <a href="files/Matthias_Dogbatsey_CV_October_2025.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+              Download CV (PDF)
+            </a>
+            <p class="muted" style="margin-top: 10px;">
+              Last updated: October 2025
+            </p>
+          </div>
+
+          <iframe 
+            src="files/Matthias_Dogbatsey_CV_October_2025.pdf" 
+            class="pdf-frame" 
+            frameborder="0">
+          </iframe>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>&copy; <span id="year"></span> Matthias Dogbatsey.</div>
+      <div class="muted">Curriculum Vitae</div>
+      <div class="muted">Jesus is Lord || <a href="https://www.biblegateway.com/passage/?search=Psalm%20139&version=NKJV" target="_blank" rel="noopener">Psalm 131</a></div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

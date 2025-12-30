@@ -1,0 +1,469 @@
+/* =========================================
+   1. Typography & Base Variables
+   ========================================= */
+:root {
+  /* Light Mode (Default) */
+  --bg: #f8f8fb;
+  --bg-elevated: #ffffff;
+  --bg-soft: #f1f1f7;
+  --text: #1e1e1e;
+  --text-muted: #666666;
+  --accent: #a51c30; /* Harvard crimson-like */
+  --accent-soft: #fbeaed;
+  --border: #dedee5;
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --max-width: 980px;
+  --transition-fast: 0.18s ease;
+}
+
+/* Dark Mode (Corrected for Depth) */
+html[data-theme="dark"] {
+  --bg: #0f172a;           /* Deep Slate Background */
+  --bg-elevated: #1e293b;  /* Lighter Cards (pop out) */
+  --bg-soft: #1e293b;      /* Soft background match */
+  
+  --text: #f1f5f9;         /* Off-white text */
+  --text-muted: #94a3b8;   /* Muted slate text */
+  
+  --accent: #fb7185;       /* Lighter Rose for contrast */
+  --accent-soft: rgba(251, 113, 133, 0.15);
+  
+  --border: #334155;       /* Visible slate border */
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  
+  /* Gradient uses variables now to blend correctly in dark mode */
+  background: var(--bg);
+  background: radial-gradient(
+    circle at top, 
+    var(--bg-elevated) 0%, 
+    var(--bg) 60%
+  );
+  
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout Helpers */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  max-width: var(--max-width);
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+/* =========================================
+   2. Navigation Bar
+   ========================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg) 80%, transparent 20%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Dark mode specific header tweaks */
+html[data-theme="dark"] .site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.85); /* Matches new dark bg */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.nav-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.nav-name {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.nav-title {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+}
+.nav-links a {
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+}
+.nav-links a:hover {
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+.nav-links a.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.theme-toggle button {
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  color: var(--text);
+}
+.theme-toggle button:hover {
+  background: var(--accent-soft);
+}
+
+/* =========================================
+   3. Hero Section
+   ========================================= */
+.hero {
+  padding: 2.3rem 0 2rem 0;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+  gap: 2.2rem;
+  align-items: center;
+}
+@media (max-width: 840px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.hero-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2.1rem;
+  margin: 0 0 0.3rem 0;
+}
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+.hero-tagline {
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--accent-soft);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 1rem;
+}
+.hero-meta {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+}
+.hero-meta strong {
+  color: var(--text);
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+/* Headshot */
+.hero-headshot-wrap {
+  display: flex;
+  justify-content: center;
+}
+.hero-headshot {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  transform: scale(1.22);
+  box-shadow: var(--shadow-soft);
+  border: 3px solid #ffffff; /* White border in light mode */
+}
+/* Fix headshot border in Dark Mode */
+html[data-theme="dark"] .hero-headshot {
+  border-color: var(--bg-elevated); 
+}
+
+/* =========================================
+   4. Buttons & Components
+   ========================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.95rem;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+.btn-primary:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover {
+  background: var(--bg-soft);
+  text-decoration: none;
+}
+.btn-soft {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: transparent;
+}
+.btn-soft:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* =========================================
+   5. Sections, Cards, Lists
+   ========================================= */
+.main { flex: 1; }
+.section { padding: 1.8rem 0; }
+.section-heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.3rem;
+}
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1rem;
+}
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  font-size: 1.02rem;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+.muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Standard Lists */
+.simple-list,
+.pub-list,
+.teaching-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.simple-list li,
+.pub-list li,
+.teaching-list li {
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+}
+
+/* =========================================
+   6. Publication Specifics
+   ========================================= */
+.pub-title { font-weight: 600; }
+.pub-venue { font-style: italic; }
+.pub-meta { font-size: 0.85rem; color: var(--text-muted); }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  background: #e5e7eb;
+  color: #374151;
+}
+html[data-theme="dark"] .badge {
+  background: #374151;
+  color: #e5e7eb;
+}
+
+/* Publication Buttons (DOI/PDF) */
+.pub-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.pub-btn {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--text);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+.pub-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+}
+/* Ensure spacing for publication list items */
+.pub-list li {
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   7. Pills & Footer
+   ========================================= */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.pill {
+  font-size: 0.78rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: #e5e7f5;
+  color: #27303f;
+}
+html[data-theme="dark"] .pill {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.2rem 0 2rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   8. Responsive & Grid Helpers
+   ========================================= */
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+  gap: 1.1rem;
+}
+@media (max-width: 840px) {
+  .home-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Research Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.image-card {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 0.6rem;
+  padding-bottom: 0.9rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s;
+}
+.image-card:hover {
+  transform: translateY(-3px);
+}
+.image-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.4rem;
+  background: white; /* Force white background for scientific plots */
+  border-radius: 4px;
+}
+/* In dark mode, dim the images slightly so they aren't blinding */
+html[data-theme="dark"] .image-card img {
+  opacity: 0.9;
+}
+
+.image-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+.image-card-caption {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
