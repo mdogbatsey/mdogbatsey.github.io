@@ -30,6 +30,6 @@ My research focuses on developing high-order numerical schemes for partial diffe
 - **Email:** `mdogbatsey@crimson.ua.edu`
 
 ---
-<p align="left">
+<!-- <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=mdogbatsey&show_icons=true&theme=minimal" alt="Matthias's GitHub stats" />
-</p>
+</p> -->
