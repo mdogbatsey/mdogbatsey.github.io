@@ -2,7 +2,7 @@
 
 I am a **Ph.D. Candidate in Mathematics** at the [University of Alabama](https://www.ua.edu), specializing in **Scientific Computing**, **Mathematical Biology**, and **Numerical Analysis**.
 
-My research focuses on developing high-order numerical schemes for partial differential equations (PDEs), with applications in biomolecular solvation (Poisson-Boltzmann) and hyperbolic conservation laws (Euler equations).
+My research focuses on developing high-order numerical schemes for partial differential equations (PDEs), with applications in biomolecular solvation (Poisson-Boltzmann).
 
 ---
 
