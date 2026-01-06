@@ -1,38 +1,63 @@
 /* =========================================
    1. Typography & Base Variables
    ========================================= */
-:root {
-  /* Light Mode (Default) */
-  --bg: #f8f8fb;
-  --bg-elevated: #ffffff;
-  --bg-soft: #f1f1f7;
-  --text: #1e1e1e;
-  --text-muted: #666666;
-  --accent: #a51c30; /* Harvard crimson-like */
-  --accent-soft: #fbeaed;
-  --border: #dedee5;
-  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
 
+:root {
+  /* --- BLUE THEME PALETTE --- */
+  --theme-primary: #1B3B5A;    /* Deep Navy (For Headers & Buttons) */
+  --theme-link:    #0056D2;    /* Vibrant Blue (For Text Links ONLY) */
+  --theme-bg:      #F5F7FA;    /* Cool Mist Background */
+  --theme-text:    #1A202C;    /* Dark Slate Body Text */
+  --theme-white:   #FFFFFF;    /* Pure White */
+  --theme-accent:  #3182CE;    /* Highlight Blue */
+
+  /* --- FUNCTIONAL VARIABLES --- */
+  
+  /* Backgrounds */
+  --bg: var(--theme-bg);             
+  --bg-elevated: var(--theme-white); 
+  --bg-soft: rgba(27, 59, 90, 0.05); 
+
+  /* Typography */
+  --text: var(--theme-text);         
+  --text-muted: #64748B;             
+  --text-header: var(--theme-white); 
+
+  /* Brand Colors */
+  --brand: var(--theme-primary);     /* Used for Headers/Buttons */
+  --link:  var(--theme-link);        /* Used for text links */
+  
+  /* Accents */
+  --accent-soft: rgba(49, 130, 206, 0.1); 
+
+  /* Borders & Shadows */
+  --border: rgba(27, 59, 90, 0.15);  
+  --shadow-soft: 0 12px 30px rgba(27, 59, 90, 0.08);
+
+  /* Layout */
   --radius-lg: 14px;
   --radius-pill: 999px;
   --max-width: 980px;
   --transition-fast: 0.18s ease;
 }
 
-/* Dark Mode (Corrected for Depth) */
+/* --- DARK MODE OVERRIDES --- */
 html[data-theme="dark"] {
-  --bg: #0f172a;           /* Deep Slate Background */
-  --bg-elevated: #1e293b;  /* Lighter Cards (pop out) */
-  --bg-soft: #1e293b;      /* Soft background match */
+  --bg: #0f172a;           
+  --bg-elevated: #1e293b;  
+  --bg-soft: #1e293b;      
   
-  --text: #f1f5f9;         /* Off-white text */
-  --text-muted: #94a3b8;   /* Muted slate text */
+  --text: #f1f5f9;         
+  --text-muted: #94a3b8;   
+  --text-header: #f1f5f9;
+
+  /* In dark mode, links need to be light blue to be visible */
+  --brand: #60a5fa;       
+  --link:  #60a5fa;       
+  --accent-soft: rgba(96, 165, 250, 0.2);
   
-  --accent: #fb7185;       /* Lighter Rose for contrast */
-  --accent-soft: rgba(251, 113, 133, 0.15);
-  
-  --border: #334155;       /* Visible slate border */
-  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  --border: #334155;
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
 }
 
 *,
@@ -45,25 +70,25 @@ body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  
-  /* Gradient uses variables now to blend correctly in dark mode */
   background: var(--bg);
-  background: radial-gradient(
-    circle at top, 
-    var(--bg-elevated) 0%, 
-    var(--bg) 60%
-  );
-  
   color: var(--text);
   line-height: 1.6;
 }
 
+/* --- LINK STYLING (UPDATED) --- */
 a {
-  color: var(--accent);
+  color: var(--link);  /* Now uses the Vibrant Blue */
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 a:hover {
   text-decoration: underline;
+  color: #003c96; /* Darker shade on hover */
+}
+/* Fix link hover in dark mode */
+html[data-theme="dark"] a:hover {
+  color: #ffffff;
 }
 
 /* Layout Helpers */
@@ -85,22 +110,22 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(12px);
-  background: color-mix(in srgb, var(--bg) 80%, transparent 20%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  background-color: var(--brand); /* Uses Deep Navy */
+  color: var(--text-header);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  border-bottom: none;
 }
 
-/* Dark mode specific header tweaks */
 html[data-theme="dark"] .site-header {
+  background-color: #1e293b; 
   border-bottom: 1px solid var(--border);
-  background: rgba(15, 23, 42, 0.85); /* Matches new dark bg */
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.7rem 1rem;
+  padding: 0.8rem 1rem;
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -111,105 +136,104 @@ html[data-theme="dark"] .site-header {
 }
 .nav-name {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-}
-.nav-title {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  color: var(--text-header); 
 }
 .nav-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 .nav-links a {
   padding: 0.35rem 0.7rem;
   border-radius: var(--radius-pill);
-  border: 1px solid transparent;
+  color: var(--text-header); /* White links in header */
+  opacity: 0.9;
+  transition: opacity 0.2s, background 0.2s;
 }
 .nav-links a:hover {
-  background: var(--accent-soft);
+  background: rgba(255, 255, 255, 0.15); 
+  color: #ffffff;
   text-decoration: none;
+  opacity: 1;
 }
 .nav-links a.is-active {
-  border-color: var(--accent);
-  background: var(--accent-soft);
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-weight: 600;
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
 }
 .theme-toggle button {
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  background: var(--bg-elevated);
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.2);
   cursor: pointer;
-  padding: 0.25rem 0.6rem;
-  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
   display: inline-flex;
-  gap: 0.25rem;
-  align-items: center;
-  color: var(--text);
+  color: var(--text-header);
 }
 .theme-toggle button:hover {
-  background: var(--accent-soft);
+  background: rgba(255,255,255,0.1);
 }
 
 /* =========================================
    3. Hero Section
    ========================================= */
 .hero {
-  padding: 2.3rem 0 2rem 0;
+  padding: 3rem 0 2.5rem 0;
+  background-color: var(--bg);
 }
 .hero-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
-  gap: 2.2rem;
+  gap: 2.5rem;
   align-items: center;
 }
 @media (max-width: 840px) {
   .hero-inner {
     grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
   }
 }
 .hero-title {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 2.1rem;
-  margin: 0 0 0.3rem 0;
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--brand); /* Navy Title */
 }
+html[data-theme="dark"] .hero-title {
+  color: var(--text);
+}
+
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
 }
 .hero-tagline {
-  font-size: 1rem;
-  padding: 0.8rem 1rem;
-  border-radius: var(--radius-lg);
-  background: var(--accent-soft);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  color: var(--text);
 }
 .hero-meta {
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-}
-.hero-meta strong {
-  color: var(--text);
 }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
 }
 
 /* Headshot */
@@ -223,13 +247,8 @@ html[data-theme="dark"] .site-header {
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 30%;
-  transform: scale(1.22);
   box-shadow: var(--shadow-soft);
-  border: 3px solid #ffffff; /* White border in light mode */
-}
-/* Fix headshot border in Dark Mode */
-html[data-theme="dark"] .hero-headshot {
-  border-color: var(--bg-elevated); 
+  border: 4px solid var(--bg-elevated); 
 }
 
 /* =========================================
@@ -240,72 +259,111 @@ html[data-theme="dark"] .hero-headshot {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-pill);
-  padding: 0.45rem 0.95rem;
-  font-size: 0.88rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
   transition: all var(--transition-fast);
 }
+/* Primary buttons keep the Deep Navy Brand color */
 .btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-  box-shadow: var(--shadow-soft);
+  background: var(--brand); 
+  color: #ffffff;            
+  box-shadow: 0 4px 6px rgba(27, 59, 90, 0.2);
 }
 .btn-primary:hover {
+  background: #122A40; /* Darker Navy */
   text-decoration: none;
   transform: translateY(-1px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  color: #fff;
 }
+
+/* Ghost/Soft buttons follow the Link color for visibility */
 .btn-ghost {
   background: transparent;
-  border-color: var(--border);
-  color: var(--text);
+  border-color: var(--brand);
+  color: var(--brand);
 }
 .btn-ghost:hover {
-  background: var(--bg-soft);
+  background: var(--brand);
+  color: #fff;
   text-decoration: none;
 }
 .btn-soft {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--brand);
   border-color: transparent;
 }
 .btn-soft:hover {
-  background: var(--accent);
+  background: var(--brand);
   color: white;
 }
+
+html[data-theme="dark"] .btn-soft {
+  background: rgba(255,255,255,0.1);
+  color: var(--text);
+}
+html[data-theme="dark"] .btn-soft:hover {
+  background: var(--brand);
+  color: #000;
+}
+
 
 /* =========================================
    5. Sections, Cards, Lists
    ========================================= */
 .main { flex: 1; }
-.section { padding: 1.8rem 0; }
+.section { padding: 2rem 0; }
+
 .section-heading {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 1.35rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--brand);
+  border-bottom: 2px solid var(--accent-soft);
+  display: inline-block;
+  padding-bottom: 5px;
 }
+html[data-theme="dark"] .section-heading {
+  color: var(--text);
+  border-color: rgba(255,255,255,0.2);
+}
+
 .section-subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .card {
-  background: var(--bg-elevated);
+  background: var(--bg-elevated); 
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.5rem;
   box-shadow: var(--shadow-soft);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-2px);
 }
 .card h3 {
   margin-top: 0;
-  margin-bottom: 0.35rem;
-  font-size: 1.02rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
   font-family: "Georgia", "Times New Roman", serif;
+  color: var(--brand);
 }
+.card h3 a {
+  color: var(--brand); /* Headers in cards should match brand, not link color */
+}
+html[data-theme="dark"] .card h3,
+html[data-theme="dark"] .card h3 a {
+  color: var(--text);
+}
+
 .muted {
   color: var(--text-muted);
   font-size: 0.9rem;
@@ -322,57 +380,49 @@ html[data-theme="dark"] .hero-headshot {
 .simple-list li,
 .pub-list li,
 .teaching-list li {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* =========================================
    6. Publication Specifics
    ========================================= */
-.pub-title { font-weight: 600; }
-.pub-venue { font-style: italic; }
-.pub-meta { font-size: 0.85rem; color: var(--text-muted); }
-.badge {
-  display: inline-flex;
-  align-items: center;
-  border-radius: var(--radius-pill);
-  padding: 0.1rem 0.5rem;
-  font-size: 0.75rem;
-  background: #e5e7eb;
-  color: #374151;
+.pub-citation {
+  display: block;
 }
-html[data-theme="dark"] .badge {
-  background: #374151;
-  color: #e5e7eb;
-}
-
-/* Publication Buttons (DOI/PDF) */
 .pub-links {
   display: flex;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
 }
+/* PDF/DOI Buttons */
 .pub-btn {
   display: inline-block;
   padding: 0.2rem 0.8rem;
-  border: 1px solid var(--text);
+  border: 1px solid var(--brand); /* Navy Border */
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--brand); /* Navy Text */
   text-decoration: none;
-  transition: all 0.2s ease;
   background: transparent;
+  transition: all 0.2s ease;
 }
 .pub-btn:hover {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--brand);
+  color: #ffffff;
   text-decoration: none;
 }
-/* Ensure spacing for publication list items */
+
 .pub-list li {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.2rem;
+}
+.pub-list li:last-child {
+  border-bottom: none;
 }
 
 /* =========================================
@@ -381,25 +431,35 @@ html[data-theme="dark"] .badge {
 .pill-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 .pill {
-  font-size: 0.78rem;
-  padding: 0.18rem 0.55rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-pill);
-  background: #e5e7f5;
-  color: #27303f;
+  background: var(--accent-soft);
+  color: var(--brand);
+  font-weight: 600;
+  border: 1px solid transparent;
 }
 html[data-theme="dark"] .pill {
-  background: #334155;
-  color: #e5e7eb;
+  background: rgba(255,255,255,0.1);
+  color: var(--text);
 }
 
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.2rem 0 2rem 0;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  background-color: var(--brand); /* Navy Footer */
+  color: var(--text-header);
+  padding: 3rem 0;
+  margin-top: auto;
+  text-align: center;
+}
+.site-footer .muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+.site-footer a {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* =========================================
@@ -409,14 +469,19 @@ html[data-theme="dark"] .pill {
   .nav {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.8rem;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
 .home-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-  gap: 1.1rem;
+  gap: 1.5rem;
+  align-items: start;
 }
 @media (max-width: 840px) {
   .home-grid {
@@ -424,13 +489,6 @@ html[data-theme="dark"] .pill {
   }
 }
 
-/* Research Image Grid */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
 .image-card {
   background: var(--bg-elevated);
   border-radius: var(--radius-lg);
@@ -438,32 +496,96 @@ html[data-theme="dark"] .pill {
   padding: 0.6rem;
   padding-bottom: 0.9rem;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.2s;
 }
-.image-card:hover {
-  transform: translateY(-3px);
-}
-.image-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  display: block;
-  margin-bottom: 0.4rem;
-  background: white; /* Force white background for scientific plots */
-  border-radius: 4px;
-}
-/* In dark mode, dim the images slightly so they aren't blinding */
-html[data-theme="dark"] .image-card img {
-  opacity: 0.9;
+/* =========================================
+   9. Visualization Grid (Research Page Fix)
+   ========================================= */
+.image-grid {
+  display: grid;
+  /* Creates a responsive grid that fits as many columns as possible */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.image-card-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
+.image-card {
+  /* Ensure the card styles from the blue theme are applied here too if not already */
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden; /* Keeps content inside rounded corners */
+  display: flex;
+  flex-direction: column;
 }
+
+.image-card img {
+  width: 100%;
+  height: 220px;       /* Fixed height ensures all cards line up perfectly */
+  object-fit: contain; /* Ensures plots are not stretched or distorted */
+  background: #ffffff; /* Forces white bg behind transparent plots for readability */
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem;     /* Small padding so the plot doesn't touch the edges */
+}
+
 .image-card-caption {
-  font-size: 0.8rem;
+  padding: 1rem !important; /* Force padding to override inline styles if needed */
+  font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
+  background: var(--bg-elevated);
+}
+
+/* Optional: Make the caption title stand out */
+.image-card-caption strong {
+  color: var(--theme-primary);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================
+   10. Dark Mode Fixes for Visualizations
+   ========================================= */
+
+/*
+   In Light mode, this uses the dark navy brand color.
+   In Dark mode, we need to override it to use the light text color.
+*/
+html[data-theme="dark"] .image-card-caption strong {
+    color: var(--text) !important; /* Forces it to off-white in dark mode */
+}
+
+/* Optional: Slight adjustment to the caption background in dark mode if needed */
+html[data-theme="dark"] .image-card-caption {
+    background: var(--bg-elevated);
+    color: var(--text-muted);
+}
+/* ... existing pill styles above ... */
+
+/* UPDATED FOOTER - Neutral Dark Gray */
+.site-footer {
+  background-color: #111827; /* Dark Gray/Black instead of Blue */
+  color: #ffffff;            /* White Text */
+  padding: 3rem 0;
+  margin-top: auto;
+  text-align: center;
+  border-top: 4px solid var(--brand); /* Small blue accent line on top */
+}
+
+/* Make the muted text (copyright etc) slightly transparent white */
+.site-footer .muted {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Links in the footer */
+.site-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s;
+}
+
+.site-footer a:hover {
+  border-bottom-color: #ffffff;
+  opacity: 1;
 }
