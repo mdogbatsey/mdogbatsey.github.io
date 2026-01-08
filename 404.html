@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page Not Found | Matthias Dogbatsey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body class="page">
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="index.html">Matthias Dogbatsey</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container" style="text-align: center; padding-top: 4rem; padding-bottom: 4rem;">
+        <h1 style="font-size: 4rem; margin-bottom: 1rem; color: var(--theme-primary);">404</h1>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem;">
+          Oops! The page you are looking for doesn't exist.
+        </p>
+        <a href="index.html" class="btn btn-primary">Return to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>&copy; <span id="year"></span> Matthias Dogbatsey.</div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
