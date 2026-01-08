@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mdogbatsey.github.io/sitemap.xml
