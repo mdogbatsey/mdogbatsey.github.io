@@ -1,31 +1,103 @@
-// Dark mode toggle with localStorage
-(function () {
-  const html = document.documentElement;
-  const toggleBtn = document.querySelector("[data-theme-toggle]");
+// main.js — Matthias Dogbatsey
+// Dark mode · Active nav · Particles sync · Scroll reveal · Footer year
 
-  const saved = window.localStorage.getItem("tk-theme");
-  if (saved === "dark" || saved === "light") {
-    html.setAttribute("data-theme", saved);
+(function () {
+  const html       = document.documentElement;
+  const toggleBtn  = document.querySelector("[data-theme-toggle]");
+
+  // ── Particle colors tuned to the blue theme ────────────────
+  const particleColors = {
+    light: "#1B3B5A",  // Deep navy on light background
+    dark:  "#3b82f6"   // Bright blue on dark background
+  };
+
+  // ── Particles theme sync ───────────────────────────────────
+  function updateParticlesTheme(theme) {
+    if (window.pJSDom && window.pJSDom.length > 0) {
+      const pJS   = window.pJSDom[0].pJS;
+      const color = particleColors[theme];
+      pJS.particles.color.value       = color;
+      pJS.particles.line_linked.color = color;
+      pJS.fn.particlesRefresh();
+    }
   }
+
+  // ── 1. Initial theme setup ─────────────────────────────────
+  const saved       = window.localStorage.getItem("tk-theme");
+  let currentTheme  = "light";
+
+  if (saved === "dark" || saved === "light") {
+    currentTheme = saved;
+    html.setAttribute("data-theme", currentTheme);
+  }
+
+  // Sync particles once the page (and particles canvas) has loaded
+  window.addEventListener("load", () => {
+    updateParticlesTheme(currentTheme);
+  });
+
+  // ── 2. Toggle button ───────────────────────────────────────
+  function setToggleLabel(theme) {
+    if (toggleBtn) {
+      toggleBtn.textContent = theme === "light" ? "Dark" : "Light";
+    }
+  }
+
+  setToggleLabel(currentTheme);
 
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       const current = html.getAttribute("data-theme") || "light";
-      const next = current === "light" ? "dark" : "light";
+      const next    = current === "light" ? "dark" : "light";
+
       html.setAttribute("data-theme", next);
       window.localStorage.setItem("tk-theme", next);
-      toggleBtn.textContent = next === "light" ? "Dark mode" : "Light mode";
+      setToggleLabel(next);
+      updateParticlesTheme(next);
     });
-
-    // initialize label
-    const current = html.getAttribute("data-theme") || "light";
-    toggleBtn.textContent = current === "light" ? "Dark mode" : "Light mode";
   }
 
-  // highlight active nav link based on body data-page
+  // ── 3. Active nav link ─────────────────────────────────────
   const page = document.body.getAttribute("data-page");
   if (page) {
-    const link = document.querySelector(`.nav-links a[data-page="${page}"]`);
-    if (link) link.classList.add("is-active");
+    const activeLink = document.querySelector(`.nav-links a[data-page="${page}"]`);
+    if (activeLink) activeLink.classList.add("is-active");
   }
+
+  // ── 4. Scroll-triggered card reveal ───────────────────────
+  if ("IntersectionObserver" in window) {
+    const revealTargets = document.querySelectorAll(
+      ".card, .image-card, .section-heading, .pub-list li, .talk-item, .news-item, .awards-table tr"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = "1";
+            entry.target.style.transform = "translateY(0)";
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.07, rootMargin: "0px 0px -32px 0px" }
+    );
+
+    revealTargets.forEach((el, i) => {
+      // Skip elements already in the viewport on load (hero area)
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.92) return;
+
+      el.style.opacity    = "0";
+      el.style.transform  = "translateY(16px)";
+      el.style.transition = `opacity 0.45s ease ${Math.min(i * 0.03, 0.25)}s,
+                             transform 0.45s ease ${Math.min(i * 0.03, 0.25)}s`;
+      observer.observe(el);
+    });
+  }
+
+  // ── 5. Footer year ─────────────────────────────────────────
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 })();
