@@ -1,83 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-17F1BTYJBH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-17F1BTYJBH');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-17F1BTYJBH');</script>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <meta charset="UTF-8" />
   <title>Research | Matthias Dogbatsey</title>
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <link rel="stylesheet" href="assets/css/style.css" />
-  
-  <script defer src="assets/js/main.js"></script>
-
   <meta name="description" content="Research by Matthias Dogbatsey: Numerical methods for PDEs (p-Laplace, ADI, MIB), biomolecular solvation models, and social dynamics modeling." />
   <meta name="author" content="Matthias Dogbatsey" />
-  <meta name="keywords" content="Matthias Dogbatsey, Scientific Computing, Mathematical Biology, p-Laplace Equation, MIB Method, ADI Schemes, Social Dynamics, Gang Dynamics, University of Alabama" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Matthias Dogbatsey - Mathematician" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://mdogbatsey.github.io/research.html" /> 
   <meta property="og:title" content="Research | Matthias Dogbatsey" />
-  <meta property="og:description" content="Research Overview: High-Order Numerical Schemes, Biomolecular Solvation, and Social Dynamics Modeling." />
+  <meta property="og:description" content="High-Order Numerical Schemes, Biomolecular Solvation, and Social Dynamics Modeling." />
   <meta property="og:image" content="https://mdogbatsey.github.io/assets/img/headshot.jpg" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Research | Matthias Dogbatsey" />
-  <meta name="twitter:description" content="Research Overview: High-Order Numerical Schemes, Biomolecular Solvation, and Social Dynamics Modeling." />
-  <meta name="twitter:image" content="https://mdogbatsey.github.io/assets/img/headshot.jpg" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Matthias Dogbatsey",
-    "jobTitle": "Ph.D. Candidate",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "The University of Alabama"
-    },
-    "url": "https://mdogbatsey.github.io/research.html",
-    "image": "https://mdogbatsey.github.io/assets/img/headshot.jpg",
-    "sameAs": [
-      "https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en",
-      "https://www.linkedin.com/in/matthias-dogbatsey"
-    ],
-    "knowsAbout": [
-      "Scientific Computing",
-      "Mathematical Biology",
-      "p-Laplace Equation",
-      "Matched Interface and Boundary Method",
-      "Social Dynamics"
-    ]
-  }
-  </script>
+  <link rel="canonical" href="https://mdogbatsey.github.io/research.html" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
 </head>
-
 <body class="page" data-page="research">
   <header class="site-header">
     <nav class="nav">
+      <div class="nav-left">
+<!--         <div class="nav-name">Matthias&nbsp;Dogbatsey</div> -->
+<!--         <div class="nav-title">Scientific Computing · Mathematical Biology</div> -->
+      </div>
       <div class="nav-links">
-        <a href="index.html" data-page="home">Matthias Dogbatsey</a>
+        <a href="index.html" data-page="home">Matthias&nbsp;Dogbatsey</a>
         <a href="research.html" data-page="research">Research</a>
         <a href="publications.html" data-page="publications">Publications</a>
         <a href="teaching.html" data-page="teaching">Teaching</a>
-        <a href="talk.html" data-page="talk">Talk</a>
+        <a href="talk.html" data-page="talk">Talks</a>
         <a href="service.html" data-page="service">Service</a>
         <a href="cv.html" data-page="cv">CV</a>
         <a href="contact.html" data-page="contact">Contact</a>
       </div>
       <div class="theme-toggle">
-        <button type="button" data-theme-toggle></button>
+        <button type="button" data-theme-toggle>Dark</button>
       </div>
     </nav>
   </header>
@@ -87,85 +44,72 @@
       <div class="container">
         <h1 class="section-heading">Research Overview</h1>
         <p class="section-subtitle">
-          My research lies at the intersection of Scientific Computing, Mathematical Modeling, and Mathematical Biology.
+          At the intersection of Scientific Computing, Mathematical Modeling, and Mathematical Biology.
         </p>
 
+        <!-- Overview -->
         <div class="card">
           <h3>Focus Areas</h3>
           <p>
-            My work involves developing and implementing advanced numerical methods, such as finite difference schemes, 
-            Matched Interface and Boundary (MIB) methods, and Finite Element Methods (FEM). 
-            I apply these methods to solve multidimensional partial differential equations (PDEs) on 
-            high-performance computing (HPC) platforms for real-world applications in drug design and protein engineering. 
-            I'm also interested in social dynamics modeling, using mathematics to study complex systems like crime and gangs.
+            My work involves developing and implementing advanced numerical methods — finite difference schemes, Matched Interface and Boundary (MIB) methods, and Finite Element Methods (FEM) — to solve multidimensional partial differential equations on high-performance computing platforms. Applications span drug design, protein engineering, and mathematical modeling of social systems.
           </p>
-          
-          <ul class="simple-list" style="margin-top: 1rem;">
-            <li style="margin-bottom: 0.8rem;">
-              <strong>Mathematical Biology:</strong> Implicit solvation models, biomolecular solvation analysis, 
-              ensemble averaged electrostatics, mathematical methods for molecular biology, and PDE modeling of molecular surfaces.
-            </li>
-            <li style="margin-bottom: 0.8rem;">
-              <strong>Scientific Computing:</strong> Electrostatic analysis, material interface problems, and biomolecular simulations.
-            </li>
-            <li style="margin-bottom: 0.8rem;">
-              <strong>Numerical Methods for PDEs:</strong> Matched Interface and Boundary (MIB) method and 
-              Alternating Direction Implicit (ADI) methods.
-            </li>
-            <li>
-              <strong>Mathematical Modeling:</strong> Social dynamics modeling (e.g., Gang dynamics).
-            </li>
-          </ul>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem;">
+            <div style="padding: 1rem; background: var(--bg-subtle); border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong style="display: block; margin-bottom: 0.4rem; font-size: 0.9rem;">Mathematical Biology</strong>
+              <span style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55;">Implicit solvation models, biomolecular solvation analysis, ensemble averaged electrostatics, PDE modeling of molecular surfaces.</span>
+            </div>
+            <div style="padding: 1rem; background: var(--bg-subtle); border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong style="display: block; margin-bottom: 0.4rem; font-size: 0.9rem;">Scientific Computing</strong>
+              <span style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55;">Electrostatic analysis, material interface problems, biomolecular simulations on HPC platforms.</span>
+            </div>
+            <div style="padding: 1rem; background: var(--bg-subtle); border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong style="display: block; margin-bottom: 0.4rem; font-size: 0.9rem;">Numerical Methods for PDEs</strong>
+              <span style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55;">Matched Interface and Boundary (MIB) method, Alternating Direction Implicit (ADI) methods.</span>
+            </div>
+            <div style="padding: 1rem; background: var(--bg-subtle); border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong style="display: block; margin-bottom: 0.4rem; font-size: 0.9rem;">Mathematical Modeling</strong>
+              <span style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55;">Social dynamics modeling — gang dynamics, crime curtailment, intervention strategy analysis.</span>
+            </div>
+          </div>
         </div>
 
-        <h2 class="section-heading" style="margin-top: 2rem;">Current Projects</h2>
-        
+        <!-- Current Projects -->
+        <h2 class="section-heading" style="margin-top: 2.5rem;">Current Projects</h2>
+
         <div class="home-grid">
-          <div>
-            <div class="card" style="height: 100%;">
-              <h3>Biomolecular Solvation</h3>
-              <p>
-                I am developing a <strong>Variational Implicit Solvation Model</strong> that incorporates:
-              </p>
-              
-              <ul class="simple-list">
-                <li>Size-Modified Poisson-Boltzmann (SMPB) theory.</li>
-                <li>Diffuse Interface approaches.</li>
-                <li>Ensemble averaged electrostatics for accurate free energy calculations.</li>
-              </ul>
+          <div class="card" style="height: 100%;">
+            <h3>Biomolecular Solvation</h3>
+            <p>Developing a <strong>Variational Implicit Solvation Model</strong> incorporating Size-Modified Poisson-Boltzmann (SMPB) theory, diffuse interface approaches, and ensemble averaged electrostatics for accurate free energy calculations in drug design and protein engineering.</p>
+            <div class="pill-row" style="margin-top: 1rem;">
+              <span class="pill">Poisson-Boltzmann</span>
+              <span class="pill">Free Energy</span>
+              <span class="pill">Protein Engineering</span>
             </div>
           </div>
 
-          <div>
-            <div class="card" style="height: 100%;">
-              <h3>High-Order Numerical Schemes</h3>
-              <p>
-                Developing robust solvers for interface problems and stiff systems:
-              </p>
-              <ul class="simple-list">
-                <li>
-                  <strong>3D p-Laplace Equations:</strong> Finite difference methods for solving nonlinear PDEs in three dimensions.
-                </li>
-                <li>
-                  <strong>ADI Methods:</strong> Efficient time-stepping for parabolic equations.
-                </li>
-                <li>
-                  <strong>MIB Method:</strong> Handling complex geometry and material interfaces in solvation models.
-                </li>
-              </ul>
+          <div class="card" style="height: 100%;">
+            <h3>High-Order Numerical Schemes</h3>
+            <p>Developing robust solvers for interface problems and stiff systems, with focus on three-dimensional p-Laplace equations using finite difference methods, efficient ADI time-stepping for parabolic equations, and MIB methods for complex geometry in solvation models.</p>
+            <div class="pill-row" style="margin-top: 1rem;">
+              <span class="pill">p-Laplace</span>
+              <span class="pill">ADI Methods</span>
+              <span class="pill">MIB Method</span>
             </div>
           </div>
         </div>
 
-        <div class="card" style="margin-top: 1rem;">
+        <div class="card">
           <h3>Social Dynamics Modeling</h3>
-          <p>
-            Beyond physics-based modeling, I apply ODE systems to understand social phenomena. 
-            My recent work assesses the impact of intervention programs on <strong>gang dynamics</strong> 
-            using mathematical modeling approaches.
-          </p>
+          <p>Beyond physics-based modeling, I apply ODE systems to understand social phenomena. Recent work assesses the impact of intervention programs on <strong>gang dynamics</strong> using mathematical modeling approaches adapted from epidemiological compartmental models.</p>
+          <div class="pill-row" style="margin-top: 1rem;">
+            <span class="pill">ODE Systems</span>
+            <span class="pill">Gang Dynamics</span>
+            <span class="pill">Compartmental Models</span>
+            <span class="pill">Stability Analysis</span>
+          </div>
         </div>
-        
+
+        <!-- Computational Tools -->
         <div class="card">
           <h3>Computational Tools</h3>
           <div class="pill-row">
@@ -174,42 +118,37 @@
             <span class="pill">Python</span>
             <span class="pill">R</span>
             <span class="pill">VMD</span>
-            <span class="pill">Variational Implicit Solvent Models</span>
-            <span class="pill">Matched Interface and Boundary Methods</span>
-            <span class="pill">Poisson-Boltzmann Equation</span>
-            <span class="pill">Compartmental Epidemiological Models</span>
+            <span class="pill">HPC / Slurm</span>
             <span class="pill">Finite Difference Methods</span>
-            <span class="pill">High Performance Computing</span>
+            <span class="pill">Variational Implicit Solvent Models</span>
+            <span class="pill">Matched Interface and Boundary</span>
           </div>
         </div>
 
-        <h2 class="section-heading" style="margin-top: 2rem;">Selected Visualizations</h2>
+        <!-- Visualizations -->
+        <h2 class="section-heading" style="margin-top: 2.5rem;">Selected Visualizations</h2>
         <div class="image-grid">
-          
           <div class="image-card">
-            <img src="assets/img/research/451c.png" alt="Electrostatic potential distribution of protein 451c" />
-            <div class="image-card-caption" style="padding: 10px;">
-              <strong>Electrostatic Analysis:</strong> 
-              Electrostatic surface potential of the protein (PDB ID: 451c) mapped onto surface generated after solving the p-Laplace equation (with p = 1.2). Visualization was done in VMD.
+            <img src="assets/img/research/451c.png" alt="Electrostatic potential of protein 451c" />
+            <div class="image-card-caption">
+              <strong>Electrostatic Analysis</strong>
+              Electrostatic surface potential of protein 451c (PDB ID) mapped onto surface generated after solving the p-Laplace equation (p = 1.2). Visualized in VMD.
             </div>
           </div>
-          
           <div class="image-card">
             <img src="assets/img/research/cpu.png" alt="Comparison of numerical schemes for p-Laplace equation" />
-            <div class="image-card-caption" style="padding: 10px;">
-              <strong>Numerical Scheme Efficiency:</strong> 
-              Comparison of three schemes (ADI, Crank-Nicolson, and Picard's Iteration) for solving the p-Laplace equation across 23 proteins. The results demonstrate that the ADI method is computationally the most efficient.
+            <div class="image-card-caption">
+              <strong>Numerical Scheme Efficiency</strong>
+              Comparison of ADI, Crank-Nicolson, and Picard's Iteration for solving the p-Laplace equation across 23 proteins. ADI proves computationally most efficient.
             </div>
           </div>
-
           <div class="image-card">
-             <img src="assets/img/research/crime.png" alt="Schematic diagram depicting the dynamics of crime" />
-            <div class="image-card-caption" style="padding: 10px;">
-              <strong>Social Dynamics:</strong> 
-              A model showing how crime and criminal activities spread in a community. 
+            <img src="assets/img/research/crime.png" alt="Schematic diagram of crime dynamics" />
+            <div class="image-card-caption">
+              <strong>Social Dynamics</strong>
+              Compartmental model depicting how crime and criminal activity propagate through a community under various intervention strategies.
             </div>
           </div>
-
         </div>
 
       </div>
@@ -218,13 +157,11 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div>&copy; <span id="year"></span> Matthias Dogbatsey.</div>
+      <div>Matthias Dogbatsey</div>
       <div class="muted">Research · Scientific Computing &amp; Mathematical Modeling</div>
-      <div class="muted">Jesus is Lord || <a href="https://www.biblegateway.com/passage/?search=Psalm%20139&version=NKJV" target="_blank" rel="noopener">Psalm 139</a></div>
+      <div class="muted">Jesus is Lord &ensp;·&ensp; <a href="https://www.biblegateway.com/passage/?search=Psalm%20139&version=NKJV" target="_blank" rel="noopener">Psalm 139</a></div>
+      <div class="muted" style="margin-top: 0.4rem;">&copy; <span id="year"></span> Matthias Dogbatsey</div>
     </div>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </footer>
 </body>
 </html>
