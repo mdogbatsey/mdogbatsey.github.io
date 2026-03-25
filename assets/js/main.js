@@ -100,4 +100,49 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // ── 6. Mobile Hamburger Menu ───────────────────────────────
+  const hamburger = document.querySelector(".hamburger-menu");
+  const navLinks  = document.querySelector(".nav-links");
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove("is-open");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // ── 7. Scroll Progress Bar ─────────────────────────────────
+  const scrollBar = document.querySelector(".scroll-progress-bar");
+  if (scrollBar) {
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercentage = (scrollTop / scrollHeight) * 100;
+      scrollBar.style.width = Math.max(0, Math.min(100, scrollPercentage)) + "%";
+    }, { passive: true });
+  }
+
+  // ── 8. 3D Tilt Effect on Headshot ─────────────────────────
+  const headshot = document.querySelector(".hero-headshot");
+  if (headshot) {
+    headshot.addEventListener("mousemove", (e) => {
+      const rect = headshot.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xRot = 15 * ((y - rect.height / 2) / (rect.height / 2));
+      const yRot = -15 * ((x - rect.width / 2) / (rect.width / 2));
+      headshot.style.transform = `perspective(1000px) scale(1.025) rotateX(${xRot}deg) rotateY(${yRot}deg)`;
+    });
+    headshot.addEventListener("mouseleave", () => {
+      headshot.style.transform = "perspective(1000px) scale(1) rotateX(0deg) rotateY(0deg)";
+    });
+  }
+
 })();
