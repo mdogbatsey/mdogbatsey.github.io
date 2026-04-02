@@ -12,10 +12,82 @@
   <meta property="og:title" content="Publications | Matthias Dogbatsey" />
   <meta property="og:description" content="Peer-reviewed publications in Scientific Computing and Mathematical Biology." />
   <meta property="og:image" content="https://mdogbatsey.github.io/assets/img/headshot.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@mdogbatsey" />
   <link rel="canonical" href="https://mdogbatsey.github.io/publications.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="assets/js/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://mdogbatsey.github.io/#person",
+        "name": "Matthias Dogbatsey",
+        "url": "https://mdogbatsey.github.io/",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "The University of Alabama"
+        },
+        "sameAs": [
+          "https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en",
+          "https://orcid.org/0000-0001-6905-6684",
+          "https://www.researchgate.net/profile/Matthias-Dogbatsey"
+        ]
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "Numerical solution to the three-dimensional p-Laplace equation: Finite difference methods and biological applications",
+        "author": [
+          { "@type": "Person", "@id": "https://mdogbatsey.github.io/#person", "name": "Matthias Dogbatsey" },
+          { "@type": "Person", "name": "Z. Chen" },
+          { "@type": "Person", "name": "Y. Shao" },
+          { "@type": "Person", "name": "S. Zhao" }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Journal of Computational and Applied Mathematics",
+          "volumeNumber": "481"
+        },
+        "pageStart": "117270",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.1016/j.cam.2025.117270"
+        },
+        "url": "https://doi.org/10.1016/j.cam.2025.117270"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "Curtailing crime dynamics: A mathematical approach",
+        "author": [
+          { "@type": "Person", "name": "T. Kwofie" },
+          { "@type": "Person", "@id": "https://mdogbatsey.github.io/#person", "name": "Matthias Dogbatsey" },
+          { "@type": "Person", "name": "S. E. Moore" }
+        ],
+        "datePublished": "2023",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Frontiers in Applied Mathematics and Statistics",
+          "volumeNumber": "8"
+        },
+        "pageStart": "1086745",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.3389/fams.2022.1086745"
+        },
+        "url": "https://doi.org/10.3389/fams.2022.1086745"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="page" data-page="publications">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -76,6 +148,10 @@
                 <em>Journal of Computational and Applied Mathematics</em>,
                 <strong>481</strong>, 117270 (2026).
               </div>
+              <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <p>We develop and analyze finite difference methods for the three-dimensional p-Laplace equation, a nonlinear generalization of the Laplacian with applications in biomolecular surface generation and electrostatic analysis. Efficient ADI, Crank–Nicolson, and Picard iterative schemes are implemented and benchmarked across 23 benchmark proteins. The ADI method is shown to be the most computationally efficient, enabling accurate electrostatic potential calculations for drug design and protein engineering on high-performance computing platforms.</p>
+              </details>
               <div class="pub-links">
                 <a href="files/jcam26.pdf" class="pub-btn" target="_blank" rel="noopener">PDF</a>
                 <a href="https://doi.org/10.1016/j.cam.2025.117270" class="pub-btn" target="_blank" rel="noopener">DOI</a>
@@ -90,6 +166,10 @@
                 <em>Frontiers in Applied Mathematics and Statistics</em>,
                 <strong>8</strong>, 1086745 (2023).
               </div>
+              <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <p>We propose a compartmental ODE model for the dynamics of criminal activity and gang membership, adapted from epidemiological frameworks. The model incorporates recruitment, rehabilitation, and law-enforcement intervention parameters. Stability analysis identifies reproduction numbers governing long-term crime persistence. Numerical simulations demonstrate that targeted rehabilitation programs combined with early intervention achieve the most significant reductions in criminal activity, providing quantitative guidance for policy design.</p>
+              </details>
               <div class="pub-links">
                 <a href="files/fams24.pdf" class="pub-btn" target="_blank" rel="noopener">PDF</a>
                 <a href="https://doi.org/10.3389/fams.2022.1086745" class="pub-btn" target="_blank" rel="noopener">DOI</a>
@@ -112,5 +192,14 @@
       <div class="muted" style="margin-top: 0.4rem;">&copy; <span id="year"></span> Matthias Dogbatsey</div>
     </div>
   </footer>
+  <script>
+    (function() {
+      var items = document.querySelectorAll('.pub-list li');
+      var badge = document.getElementById('pub-count-badge');
+      if (badge && items.length) {
+        badge.textContent = items.length + ' publication' + (items.length !== 1 ? 's' : '');
+      }
+    })();
+  </script>
 </body>
 </html>

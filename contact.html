@@ -12,7 +12,12 @@
   <meta property="og:title" content="Contact | Matthias Dogbatsey" />
   <meta property="og:description" content="Get in touch for research collaborations in Scientific Computing and Mathematical Biology." />
   <meta property="og:image" content="https://mdogbatsey.github.io/assets/img/headshot.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@mdogbatsey" />
   <link rel="canonical" href="https://mdogbatsey.github.io/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="assets/js/main.js"></script>
@@ -169,6 +174,48 @@
               </div>
             </div>
           </div>
+
+          <!-- Contact Form -->
+          <div style="grid-column: 1 / -1;">
+            <div class="card">
+              <h3>Send a Message</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Prefer a quick note? Fill this in and I'll get back to you by email.
+              </p>
+              <div class="contact-form-wrap">
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+                <input type="hidden" name="subject" value="New message from mdogbatsey.github.io" />
+                <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="cf-name" class="form-label">Name</label>
+                    <input type="text" id="cf-name" name="name" class="form-input" placeholder="Your name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="cf-email" class="form-label">Email</label>
+                    <input type="email" id="cf-email" name="email" class="form-input" placeholder="your@email.com" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="cf-subject" class="form-label">Subject</label>
+                  <input type="text" id="cf-subject" name="subject_line" class="form-input" placeholder="Research collaboration, question, etc." />
+                </div>
+                <div class="form-group">
+                  <label for="cf-message" class="form-label">Message</label>
+                  <textarea id="cf-message" name="message" class="form-input form-textarea" placeholder="Your message…" rows="5" required></textarea>
+                </div>
+                <!-- Honeypot anti-spam -->
+                <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+                <div class="form-actions">
+                  <button type="button" class="btn btn-primary" id="cf-submit">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                  </button>
+                  <span class="form-status" id="cf-status" aria-live="polite"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -183,5 +230,61 @@
       <div class="muted" style="margin-top: 0.4rem;">&copy; <span id="year"></span> Matthias Dogbatsey</div>
     </div>
   </footer>
+  <script>
+    (function () {
+      var btn    = document.getElementById('cf-submit');
+      var status = document.getElementById('cf-status');
+      if (!btn) return;
+
+      btn.addEventListener('click', async function () {
+        var name    = document.getElementById('cf-name').value.trim();
+        var email   = document.getElementById('cf-email').value.trim();
+        var subject = document.getElementById('cf-subject').value.trim();
+        var message = document.getElementById('cf-message').value.trim();
+
+        if (!name || !email || !message) {
+          status.textContent = 'Please fill in all required fields.';
+          status.className = 'form-status error';
+          return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+        status.textContent = '';
+        status.className = 'form-status';
+
+        try {
+          var key = document.querySelector('[name="access_key"]').value;
+          var res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              access_key: key,
+              name: name,
+              email: email,
+              subject: subject || 'New message from portfolio',
+              message: message
+            })
+          });
+          var data = await res.json();
+          if (data.success) {
+            status.textContent = 'Message sent — thank you!';
+            status.className = 'form-status success';
+            ['cf-name','cf-email','cf-subject','cf-message'].forEach(function(id) {
+              document.getElementById(id).value = '';
+            });
+          } else {
+            throw new Error(data.message || 'Unknown error');
+          }
+        } catch (err) {
+          status.textContent = 'Something went wrong. Please email directly.';
+          status.className = 'form-status error';
+        }
+
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      });
+    })();
+  </script>
 </body>
 </html>
