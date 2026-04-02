@@ -29,9 +29,9 @@
 
   --text: var(--theme-text);
   --text-secondary: #334155;
-  --text-muted: #64748b;
+  --text-muted: #4b5768;
   --text-header: var(--theme-white);
-  --text-light: #94a3b8;
+  --text-light: #6b7a94;
 
   --brand: var(--theme-accent);
   --link: var(--theme-accent);
@@ -2189,4 +2189,140 @@ html[data-theme="dark"] .form-status.error   { color: #f87171; }
 html[data-theme="dark"] .pub-count-badge {
   color: #93c5fd;
   background: rgba(59, 130, 246, 0.12);
+}
+
+/* =========================================
+   Extracted inline style classes
+   ========================================= */
+
+/* Shared card intro paragraph */
+.card-intro {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* Card header row (flex row with title + badge) */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Section title inside a card header */
+.card-section-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Section heading with top spacing (replaces margin-top: 2.5rem inline) */
+.section-heading--spaced {
+  margin-top: 2.5rem;
+}
+
+/* Focus area grid (research page, 2-col) */
+.focus-area-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .focus-area-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Focus area card (research page) */
+.focus-area-card {
+  padding: 1rem;
+  background: var(--bg-soft);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.focus-area-title {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.focus-area-desc {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Connect online list (contact page) */
+.connect-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Social profile buttons — left-aligned with icon */
+.btn-social {
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.social-btn-icon {
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ORCID identifier inline */
+.orcid-id {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* CV page: name + date labels */
+.cv-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.cv-last-updated {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Workshop description paragraph (talk page) */
+.workshop-desc {
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+  margin-top: 0.3rem;
+}
+
+/* Small inline icon (arrow after text) */
+.icon-inline-sm {
+  font-size: 0.75rem;
+  margin-left: 0.4rem;
+}
+
+/* Visually hidden (for table captions, screen-reader only) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
