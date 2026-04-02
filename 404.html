@@ -10,18 +10,31 @@
   <script defer src="assets/js/main.js"></script>
 </head>
 <body class="page">
+  <a href="index.html" class="skip-link">Back to home</a>
+  <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
   <header class="site-header">
-    <nav class="nav">
+    <nav class="nav" aria-label="Main Navigation">
+      <button class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-left"></div>
       <div class="nav-links">
-        <a href="index.html">Matthias Dogbatsey</a>
+        <a href="index.html" data-page="home">Matthias&nbsp;Dogbatsey</a>
+        <a href="research.html" data-page="research">Research</a>
+        <a href="publications.html" data-page="publications">Publications</a>
+        <a href="teaching.html" data-page="teaching">Teaching</a>
+        <a href="talk.html" data-page="talk">Talks</a>
+        <a href="service.html" data-page="service">Service</a>
+        <a href="cv.html" data-page="cv">CV</a>
+        <a href="contact.html" data-page="contact">Contact</a>
       </div>
       <div class="theme-toggle">
-        <button type="button" data-theme-toggle>Dark</button>
+        <button type="button" data-theme-toggle aria-label="Toggle Dark Mode">Dark</button>
       </div>
     </nav>
   </header>
 
-  <main class="main">
+  <main class="main" id="main-content">
     <section class="section">
       <div class="container">
         <div class="error-page">
@@ -30,7 +43,9 @@
           <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 380px; text-align: center;">
             You may have followed a broken link or typed the address incorrectly.
           </p>
-          <a href="index.html" class="btn btn-primary">Return Home</a>
+          <a href="index.html" class="btn btn-primary">
+            <i class="fas fa-home"></i> Return Home
+          </a>
         </div>
       </div>
     </section>

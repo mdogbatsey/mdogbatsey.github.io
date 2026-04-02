@@ -1,45 +1,29 @@
 // main.js — Matthias Dogbatsey
-// Dark mode · Active nav · Particles sync · Scroll reveal · Footer year
+// Dark mode · System preference · Active nav · Scroll reveal · Footer year · Back-to-top
 
 (function () {
   const html       = document.documentElement;
   const toggleBtn  = document.querySelector("[data-theme-toggle]");
 
-  // ── Particle colors tuned to the blue theme ────────────────
-  const particleColors = {
-    light: "#1B3B5A",  // Deep navy on light background
-    dark:  "#3b82f6"   // Bright blue on dark background
-  };
-
-  // ── Particles theme sync ───────────────────────────────────
-  function updateParticlesTheme(theme) {
-    if (window.pJSDom && window.pJSDom.length > 0) {
-      const pJS   = window.pJSDom[0].pJS;
-      const color = particleColors[theme];
-      pJS.particles.color.value       = color;
-      pJS.particles.line_linked.color = color;
-      pJS.fn.particlesRefresh();
-    }
-  }
-
-  // ── 1. Initial theme setup ─────────────────────────────────
-  const saved       = window.localStorage.getItem("tk-theme");
-  let currentTheme  = "light";
+  // ── 1. Theme setup with system preference fallback ──────────
+  const saved = window.localStorage.getItem("tk-theme");
+  let currentTheme = "light";
 
   if (saved === "dark" || saved === "light") {
     currentTheme = saved;
-    html.setAttribute("data-theme", currentTheme);
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    currentTheme = "dark";
   }
 
-  // Sync particles once the page (and particles canvas) has loaded
-  window.addEventListener("load", () => {
-    updateParticlesTheme(currentTheme);
-  });
+  html.setAttribute("data-theme", currentTheme);
+  html.setAttribute("data-theme-set", "true");
 
   // ── 2. Toggle button ───────────────────────────────────────
   function setToggleLabel(theme) {
     if (toggleBtn) {
       toggleBtn.textContent = theme === "light" ? "Dark" : "Light";
+      toggleBtn.setAttribute("aria-label",
+        theme === "light" ? "Switch to dark mode" : "Switch to light mode");
     }
   }
 
@@ -49,11 +33,9 @@
     toggleBtn.addEventListener("click", () => {
       const current = html.getAttribute("data-theme") || "light";
       const next    = current === "light" ? "dark" : "light";
-
       html.setAttribute("data-theme", next);
       window.localStorage.setItem("tk-theme", next);
       setToggleLabel(next);
-      updateParticlesTheme(next);
     });
   }
 
@@ -84,7 +66,6 @@
     );
 
     revealTargets.forEach((el, i) => {
-      // Skip elements already in the viewport on load (hero area)
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight * 0.92) return;
 
@@ -100,21 +81,38 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ── 6. Mobile Hamburger Menu ───────────────────────────────
+  // ── 6. Mobile Hamburger Menu with backdrop + Escape key ───
   const hamburger = document.querySelector(".hamburger-menu");
   const navLinks  = document.querySelector(".nav-links");
 
+  // Create backdrop element
+  const backdrop = document.createElement("div");
+  backdrop.className = "nav-backdrop";
+  document.body.appendChild(backdrop);
+
+  function openMenu() {
+    navLinks.classList.add("is-open");
+    backdrop.style.display = "block";
+    requestAnimationFrame(() => backdrop.classList.add("is-visible"));
+    hamburger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    navLinks.classList.remove("is-open");
+    backdrop.classList.remove("is-visible");
+    hamburger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    setTimeout(() => { backdrop.style.display = "none"; }, 280);
+  }
+
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("is-open");
-      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      navLinks.classList.contains("is-open") ? closeMenu() : openMenu();
     });
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove("is-open");
-        hamburger.setAttribute("aria-expanded", "false");
-      }
+    backdrop.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navLinks.classList.contains("is-open")) closeMenu();
     });
   }
 
@@ -124,12 +122,27 @@
     window.addEventListener("scroll", () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrollPercentage = (scrollTop / scrollHeight) * 100;
-      scrollBar.style.width = Math.max(0, Math.min(100, scrollPercentage)) + "%";
+      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      scrollBar.style.width = Math.max(0, Math.min(100, pct)) + "%";
     }, { passive: true });
   }
 
-  // ── 8. 3D Tilt Effect on Headshot ─────────────────────────
+  // ── 8. Back-to-Top Button ──────────────────────────────────
+  const btt = document.createElement("button");
+  btt.className = "back-to-top";
+  btt.setAttribute("aria-label", "Back to top");
+  btt.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  document.body.appendChild(btt);
+
+  window.addEventListener("scroll", () => {
+    btt.classList.toggle("is-visible", window.scrollY > 400);
+  }, { passive: true });
+
+  btt.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // ── 9. 3D Tilt Effect on Headshot ─────────────────────────
   const headshot = document.querySelector(".hero-headshot");
   if (headshot) {
     headshot.addEventListener("mousemove", (e) => {
