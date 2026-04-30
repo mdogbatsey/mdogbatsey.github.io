@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-17F1BTYJBH"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-17F1BTYJBH');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17F1BTYJBH"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-17F1BTYJBH');</script>
   <meta charset="UTF-8" />
   <title>Page Not Found | Matthias Dogbatsey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="assets/js/main.js"></script>
 </head>
+
 <body class="page">
   <a href="index.html" class="skip-link">Back to home</a>
-  <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
   <header class="site-header">
     <nav class="nav" aria-label="Main Navigation">
       <button class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false">
@@ -25,13 +31,13 @@
       <div class="nav-left"></div>
       <div class="nav-links">
         <a href="index.html" data-page="home">Matthias&nbsp;Dogbatsey</a>
+        <a href="about.html" data-page="about">About</a>
         <a href="research.html" data-page="research">Research</a>
         <a href="publications.html" data-page="publications">Publications</a>
-        <a href="teaching.html" data-page="teaching">Teaching</a>
         <a href="talk.html" data-page="talk">Talks</a>
+        <a href="teaching.html" data-page="teaching">Teaching</a>
         <a href="service.html" data-page="service">Service</a>
         <a href="cv.html" data-page="cv">CV</a>
-        <a href="contact.html" data-page="contact">Contact</a>
       </div>
       <div class="theme-toggle">
         <button type="button" data-theme-toggle aria-label="Toggle Dark Mode">Dark</button>
@@ -58,9 +64,40 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div>Matthias Dogbatsey</div>
-      <div class="muted" style="margin-top: 0.4rem;">&copy; <span id="year"></span> Matthias Dogbatsey</div>
+      <div class="footer-grid">
+        <div>
+          <h5>About</h5>
+          <p class="muted">
+            Matthias Dogbatsey<br>
+            Ph.D. Candidate, Mathematics<br>
+            University of Alabama<br>
+            <span style="display: block; margin-top: 0.5rem;">Jesus is Lord &ensp;·&ensp; <a
+                href="https://www.biblegateway.com/passage/?search=Psalm%20139&version=NKJV" target="_blank"
+                rel="noopener">Psalm 139</a></span>
+          </p>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <p class="muted" style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <a href="mailto:mdogbatsey@crimson.ua.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://github.com/mdogbatsey"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/mdogbatsey"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </p>
+        </div>
+        <div>
+          <h5>Links</h5>
+          <p class="muted" style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <a href="https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/Matthias-Dogbatsey"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
+            <a href="https://orcid.org/0000-0001-6905-6684"><i class="fa-brands fa-orcid"></i> ORCID</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-copyright muted">
+        &copy; <span id="year"></span> Matthias Dogbatsey
+      </div>
     </div>
   </footer>
 </body>
+
 </html>

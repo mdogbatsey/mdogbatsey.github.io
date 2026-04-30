@@ -19,7 +19,9 @@
   <meta name="keywords"
     content="Matthias Dogbatsey, Mathematics, Scientific Computing, Mathematical Biology, Numerical Analysis, University of Alabama" />
 
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:profile:first_name" content="Matthias" />
+  <meta property="og:profile:last_name" content="Dogbatsey" />
   <meta property="og:url" content="https://mdogbatsey.github.io/" />
   <meta property="og:title" content="Matthias Dogbatsey — Ph.D. Candidate in Mathematics" />
   <meta property="og:description"
@@ -28,7 +30,11 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="canonical" href="https://mdogbatsey.github.io/" />
-<link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="assets/js/main.js"></script>
 
@@ -46,7 +52,8 @@
       "https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en",
       "https://www.linkedin.com/in/mdogbatsey",
       "https://github.com/mdogbatsey",
-      "https://orcid.org/0000-0001-6905-6684"
+      "https://orcid.org/0000-0001-6905-6684",
+      "https://www.researchgate.net/profile/Matthias-Dogbatsey"
     ]
   }
   </script>
@@ -68,13 +75,13 @@
       <div class="nav-left"></div>
       <div class="nav-links">
         <a href="index.html" data-page="home">Home</a>
+        <a href="about.html" data-page="about">About</a>
         <a href="research.html" data-page="research">Research</a>
         <a href="publications.html" data-page="publications">Publications</a>
-        <a href="teaching.html" data-page="teaching">Teaching</a>
         <a href="talk.html" data-page="talk">Talks</a>
+        <a href="teaching.html" data-page="teaching">Teaching</a>
         <a href="service.html" data-page="service">Service</a>
         <a href="cv.html" data-page="cv">CV</a>
-        <a href="contact.html" data-page="contact">Contact</a>
       </div>
       <div class="theme-toggle">
         <button type="button" data-theme-toggle aria-label="Toggle Dark Mode">Dark</button>
@@ -87,6 +94,40 @@
     <!-- ── Hero ───────────────────────────────────────────── -->
     <section class="hero">
       <div class="container hero-inner">
+        
+        <!-- Left: Headshot -->
+        <div class="hero-headshot-wrap">
+          <img src="assets/img/headshot.jpg" alt="Portrait of Matthias Dogbatsey" class="hero-headshot" width="220"
+            height="220" fetchpriority="high" />
+          <div class="hero-photo-meta">
+            <span class="hero-photo-name">Matthias Dogbatsey</span>
+            <span class="hero-photo-title">Ph.D. Candidate, Mathematics</span>
+          </div>
+          <div class="hero-social">
+            <a href="mailto:mdogbatsey@crimson.ua.edu" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en" target="_blank" rel="noopener"
+              aria-label="Google Scholar">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/mdogbatsey" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mdogbatsey" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://orcid.org/0000-0001-6905-6684" target="_blank" rel="noopener" aria-label="ORCID">
+              <i class="fab fa-orcid"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Matthias-Dogbatsey" target="_blank" rel="noopener"
+              aria-label="ResearchGate">
+              <i class="fab fa-researchgate"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Hero Text -->
         <div>
           <p class="hero-eyebrow">Ph.D. Candidate · University of Alabama</p>
           <h1 class="hero-title">Matthias<br>Dogbatsey</h1>
@@ -107,208 +148,105 @@
               <a href="https://sites.ua.edu/yshao/" target="_blank" rel="noopener">Prof. Yuanzhen Shao</a>
             </p>
           </div>
-
-          <div class="hero-actions">
-            <a href="files/Matthias_Dogbatsey_CV_January_2026.pdf" class="btn btn-primary" target="_blank" rel="noopener">
-              <i class="fas fa-file-pdf"></i> View CV
-            </a>
-            <a href="https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en" class="btn btn-ghost" target="_blank" rel="noopener">
-              <i class="fas fa-graduation-cap"></i> Scholar
-            </a>
-            <a href="mailto:mdogbatsey@crimson.ua.edu" class="btn btn-soft">
-              <i class="fas fa-envelope"></i> Email
-            </a>
-          </div>
-
-
         </div>
 
-        <div class="hero-headshot-wrap">
-          <img src="assets/img/headshot.jpg" alt="Portrait of Matthias Dogbatsey" class="hero-headshot" width="240"
-            height="240" fetchpriority="high" />
-          <div class="hero-photo-meta">
-            <span class="hero-photo-name">Matthias Dogbatsey</span>
-            <span class="hero-photo-title">Ph.D. Candidate, Mathematics</span>
-          </div>
-          <div class="hero-social">
-            <a href="https://github.com/mdogbatsey" target="_blank" rel="noopener" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/mdogbatsey" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://orcid.org/0000-0001-6905-6684" target="_blank" rel="noopener" aria-label="ORCID">
-              <i class="fab fa-orcid"></i>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- ── Research Interests + Education ─────────────────── -->
     <section class="section" style="padding-top: 0.5rem;">
-      <div class="container home-grid">
-
-        <!-- LEFT: Research Interests + Certificates -->
-        <div>
-          <div class="interests-section">
-            <h2 class="section-heading">Research Interests</h2>
-            <div class="interests-cloud">
-              <span class="interest-tag"><i class="fas fa-microchip tag-icon"></i> Scientific Computing</span>
-              <span class="interest-tag"><i class="fas fa-function tag-icon"></i> Mathematical Modeling</span>
-              <span class="interest-tag"><i class="fas fa-dna tag-icon"></i> Mathematical Biology</span>
-              <span class="interest-tag"><i class="fas fa-square-root-alt tag-icon"></i> Numerical Analysis</span>
-              <span class="interest-tag"><i class="fas fa-people-group tag-icon"></i> Social Dynamics</span>
-              <span class="interest-tag"><i class="fas fa-atom tag-icon"></i> Biophysics</span>
-            </div>
-            <p class="research-blurb">
-              My research lies at the intersection of rigorous numerical analysis and real-world application,
-              developing models that accurately simulate biological and social phenomena on high-performance
-              computing platforms.
-            </p>
-            <div style="margin-top: 1rem;">
-              <a href="research.html" class="btn btn-soft" style="display: inline-flex;">
-                Explore Research <i class="fas fa-arrow-right icon-inline-sm"></i>
-              </a>
-            </div>
-          </div>
-
-          <div style="margin-top: 2.25rem;">
-            <h2 class="section-heading">Certificates</h2>
-            <div class="cert-list">
-              <div class="cert-item">
-                <div class="cert-icon"><i class="fas fa-building-columns"></i></div>
-                <div class="cert-body">
-                  <span class="cert-title">Graduate Certificate in Business Management</span>
-                  <span class="cert-meta">
-                    <a href="https://nexteinstein.org/?i2=aims-esmt-industry-immersion-program-2" target="_blank" rel="noopener">AIMS-ESMT Industry Immersion Program</a>,
-                    ESMT Berlin · 2020
-                  </span>
-                </div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
-                <div class="cert-body">
-                  <span class="cert-title">Securities Certification</span>
-                  <span class="cert-meta">
-                    <a href="https://www.gisinstitute.org" target="_blank" rel="noopener">Ghana Stock Exchange</a>,
-                    Accra, Ghana · 2019
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT: Education Timeline -->
-        <div class="education-section">
-          <h2 class="section-heading">Education</h2>
-          <div class="timeline">
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div>
-                <div class="timeline-degree">Ph.D. in Mathematics</div>
-                <div class="timeline-period">2021 – 2027 expected</div>
-                <div class="timeline-institution">
-                  <a href="https://www.ua.edu" target="_blank" rel="noopener">University of Alabama</a>,
-                  Tuscaloosa, AL
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div>
-                <div class="timeline-degree">M.A. in Mathematics</div>
-                <div class="timeline-period">2021 – 2023</div>
-                <div class="timeline-institution">
-                  <a href="https://www.ua.edu" target="_blank" rel="noopener">University of Alabama</a>,
-                  Tuscaloosa, AL
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div>
-                <div class="timeline-degree">M.Sc. in Mathematical Sciences</div>
-                <div class="timeline-period">2019 – 2020</div>
-                <div class="timeline-institution">
-                  <a href="https://aims.edu.gh" target="_blank" rel="noopener">AIMS Ghana</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div>
-                <div class="timeline-degree">B.Sc. in Mathematics with Economics</div>
-                <div class="timeline-period">2013 – 2017</div>
-                <div class="timeline-institution">
-                  <a href="https://ucc.edu.gh" target="_blank" rel="noopener">University of Cape Coast</a>,
-                  Ghana
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── News & Events ──────────────────────────────────── -->
-    <section class="section" style="padding-top: 0;">
       <div class="container">
-        <h2 class="section-heading">News &amp; Events</h2>
-        <div class="card" style="padding: 1.5rem 1.75rem;">
-          <ul class="news-list">
-            <li class="news-item">
-              <span class="news-date">Mar 28–29, 2026</span>
-              <span class="news-content">
-<!--                 <strong class="badge-upcoming">Upcoming</strong> -->
-                Presented at the
-                <a href="https://www.ams.org/meetings/sectional/2329_program.html" target="_blank" rel="noopener">AMS
-                  2026 Spring Southeastern Sectional Meeting</a>
-                at Georgia Southern University-Armstrong Campus, Savannah, GA.
-              </span>
-            </li>
-            <li class="news-item">
-              <span class="news-date">Oct 11–12, 2025</span>
-              <span class="news-content">
-                Presented at the
-                <a href="https://siam.uark.edu" target="_blank" rel="noopener">10th Annual SIAM Central States Section
-                  Meeting</a>
-                at the University of Arkansas, Fayetteville, AR.
-              </span>
-            </li>
-<!-- 
-            <li class="news-item">
-              <span class="news-date">Oct 3–5, 2025</span>
-              <span class="news-content">
-                Attended the
-                <a href="https://www.ams.org/meetings/sectional/2328_program.html" target="_blank" rel="noopener">2025
-                  AMS Fall Southeastern Sectional Meeting</a>
-                at Tulane University, New Orleans, LA.
-              </span>
-            </li>
- -->
-          </ul>
+
+        <!-- Research Interests -->
+        <div class="interests-section">
+          <h2 class="section-heading">Research Interests</h2>
+          <div class="interests-cloud">
+            <span class="interest-tag"><i class="fas fa-microchip tag-icon"></i> Scientific Computing</span>
+            <span class="interest-tag"><i class="fas fa-function tag-icon"></i> Mathematical Modeling</span>
+            <span class="interest-tag"><i class="fas fa-dna tag-icon"></i> Mathematical Biology</span>
+            <span class="interest-tag"><i class="fas fa-square-root-alt tag-icon"></i> Numerical Analysis</span>
+            <span class="interest-tag"><i class="fas fa-people-group tag-icon"></i> Social Dynamics</span>
+            <span class="interest-tag"><i class="fas fa-atom tag-icon"></i> Biophysics</span>
+          </div>
+          <p class="research-blurb" style="max-width: 800px;">
+            My research lies at the intersection of rigorous numerical analysis and real-world application,
+            developing models that accurately simulate biological and social phenomena on high-performance
+            computing platforms.
+          </p>
+          <div style="margin-top: 1rem;">
+            <a href="research.html" class="btn btn-soft" style="display: inline-flex;">
+              Explore Research <i class="fas fa-arrow-right icon-inline-sm"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- News Section -->
+        <div class="news-section" style="margin-top: 3.5rem;">
+          <h2 class="section-heading">News</h2>
+          <div class="card" style="margin-top: 0;">
+            <ul class="news-list" style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 1rem; padding: 0; list-style: none;">
+              <li>
+                <span class="news-date" style="display: block; font-weight: 600; color: var(--accent); margin-bottom: 0.2rem;">June 22–26, 2026</span>
+                <strong class="badge-upcoming">Upcoming</strong>
+                Attending the
+                <a href="https://brinmrc.umd.edu/summer26-wsm/" target="_blank" rel="noopener">OneMath World School: Topics in Mathematical Biology Summer School</a>
+                at the University of Maryland, College Park, MD.
+              </li>
+              <li>
+                <span class="news-date" style="display: block; font-weight: 600; color: var(--accent); margin-bottom: 0.2rem;">May 09, 2026</span>
+                <strong class="badge-upcoming">Upcoming</strong>
+                Attending the
+                <a href="https://numericsday.math.umd.edu" target="_blank" rel="noopener">Sayas Numerics Day</a>
+                at the University of Maryland, College Park, MD.
+              </li>
+            </ul>
+            <div style="margin-top: 1rem; font-size: 0.9rem;">
+              <a href="news.html" style="font-weight: 600; color: var(--text);">See all news <i class="fas fa-arrow-right" style="margin-left: 0.2rem; font-size: 0.8em;"></i></a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
+
+
 
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <div>Matthias Dogbatsey</div>
-      <div class="muted">Ph.D. Candidate · Department of Mathematics · The University of Alabama</div>
-      <div class="muted">Jesus is Lord &ensp;·&ensp; <a
-          href="https://www.biblegateway.com/passage/?search=Psalm%20139&version=NKJV" target="_blank"
-          rel="noopener">Psalm 139</a></div>
-      <div class="muted" style="margin-top: 0.4rem;">&copy; <span id="year"></span> Matthias Dogbatsey</div>
+      <div class="footer-grid">
+        <div>
+          <h5>About</h5>
+          <p class="muted">
+            Matthias Dogbatsey<br>
+            Ph.D. Candidate, Mathematics<br>
+            University of Alabama<br>
+            <span style="display: block; margin-top: 0.5rem;">Jesus is Lord &ensp;·&ensp; <a
+                href="https://www.biblegateway.com/passage/?search=Psalm%20139&version=NKJV" target="_blank"
+                rel="noopener">Psalm 139</a></span>
+          </p>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <p class="muted" style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <a href="mailto:mdogbatsey@crimson.ua.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://github.com/mdogbatsey"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/mdogbatsey"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </p>
+        </div>
+        <div>
+          <h5>Links</h5>
+          <p class="muted" style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <a href="https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/Matthias-Dogbatsey"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
+            <a href="https://orcid.org/0000-0001-6905-6684"><i class="fa-brands fa-orcid"></i> ORCID</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-copyright muted">
+        &copy; <span id="year"></span> Matthias Dogbatsey
+      </div>
     </div>
   </footer>
 
