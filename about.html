@@ -38,11 +38,11 @@
       <div class="container">
 
         <div class="card" style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
-          <div class="hero-headshot-wrap about-profile-wrap" style="flex-shrink: 0; text-align: center;">
-            <img src="assets/img/headshot.jpg" alt="Portrait of Matthias Dogbatsey"
-              class="hero-headshot about-hero-headshot" width="240" height="240" style="margin-bottom: 1rem;" />
-            <div class="about-profile-info">
-              <div class="hero-photo-meta about-photo-meta">
+          <div class="hero-headshot-wrap" style="flex-shrink: 0; text-align: center;">
+            <img src="assets/img/headshot.jpg" alt="Portrait of Matthias Dogbatsey" class="hero-headshot" width="240"
+              height="240" style="margin-bottom: 1rem; border-radius: var(--radius-lg);" />
+            <div>
+              <div class="hero-photo-meta">
                 <span class="hero-photo-name" style="display:block; font-weight: bold; font-size: 1.2rem;">Matthias
                   Dogbatsey</span>
                 <span class="hero-photo-title" style="display:block; color: var(--text-muted);">Ph.D. Candidate,
@@ -50,7 +50,7 @@
                 <span class="hero-photo-title" style="display:block; color: var(--text-muted);">University of
                   Alabama</span>
               </div>
-              <div class="hero-social about-social" style="margin-top: 1rem;">
+              <div class="hero-social" style="margin-top: 1rem;">
                 <a href="mailto:mdogbatsey@crimson.ua.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en" target="_blank" rel="noopener"
                   aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
@@ -127,9 +127,13 @@
         <h2 class="section-heading" style="font-size: 1.5rem; margin-top: 2rem;">Funding</h2>
         <div class="card">
           <ul class="teaching-list">
-            <li>
-              <strong>Graduate Assistantship</strong> (2021 – Present) <br>
-              The University of Alabama, Department of Mathematics
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/National_Science_Foundation_logo.svg"
+                alt="NSF Logo" style="width: 48px; height: auto;" />
+              <div>
+                <strong>National Science Foundation (NSF)</strong> <br>
+                <!-- The University of Alabama, Department of Mathematics -->
+              </div>
             </li>
           </ul>
         </div>
