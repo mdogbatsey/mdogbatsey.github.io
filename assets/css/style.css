@@ -1893,7 +1893,104 @@ html[data-theme="dark"] .focus-card:hover {
 }
 
 /* =========================================
-   24. Scroll Reveal Animations
+   24. About Page — Hero Layout
+   ========================================= */
+.about-hero-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.about-hero-headshot-wrap {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.about-hero-social {
+  margin-top: 1rem;
+}
+
+.about-hero-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-title {
+  margin-top: 0;
+}
+
+.about-section-heading {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Research focus areas — formatted list */
+.research-areas-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.research-areas-list li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.research-areas-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.research-areas-list strong {
+  color: var(--theme-primary);
+}
+
+html[data-theme="dark"] .research-areas-list strong {
+  color: #e2e8f0;
+}
+
+/* Education and Certificates list */
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.education-list li:last-child {
+  border-bottom: none;
+}
+
+/* Funding item */
+.funding-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem !important;
+}
+
+.nsf-logo {
+  width: 48px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   25. Scroll Reveal Animations
    ========================================= */
 @keyframes fadeUp {
   from {
@@ -1944,7 +2041,7 @@ html[data-theme="dark"] .focus-card:hover {
 }
 
 /* =========================================
-   25. Responsive
+   26. Responsive
    ========================================= */
 @media (max-width: 840px) {
 
