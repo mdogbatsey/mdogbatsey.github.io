@@ -2,23 +2,46 @@
 <html lang="en" data-theme="light">
 
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17F1BTYJBH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-17F1BTYJBH');
+  </script>
   <meta charset="UTF-8" />
-  <title>Home | Matthias Dogbatsey</title>
+  <title>About | Matthias Dogbatsey</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Learn about Matthias Dogbatsey—Ph.D. Candidate in Mathematics at the University of Alabama, specializing in scientific computing, numerical analysis, and mathematical biology." />
+  <meta name="author" content="Matthias Dogbatsey" />
+  <link rel="canonical" href="https://mdogbatsey.github.io/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="assets/js/main.js"></script>
 </head>
 
 <body class="page" data-page="about">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
   <header class="site-header">
     <nav class="nav" aria-label="Main Navigation">
       <button class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false">
         <i class="fas fa-bars"></i>
       </button>
-      <div class="nav-left"></div>
+      <div class="nav-left">
+        <a href="index.html" class="nav-brand">
+          <span class="nav-name">Matthias Dogbatsey</span>
+        </a>
+      </div>
       <div class="nav-links">
-        <a href="index.html" data-page="home">Matthias&nbsp;Dogbatsey</a>
         <a href="about.html" data-page="about">About</a>
         <a href="research.html" data-page="research">Research</a>
         <a href="publications.html" data-page="publications">Publications</a>
@@ -33,58 +56,33 @@
     </nav>
   </header>
 
-  <main class="main">
+  <main class="main" id="main-content">
     <section class="section">
       <div class="container">
 
-        <div class="card" style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
-          <div class="hero-headshot-wrap" style="flex-shrink: 0; text-align: center;">
-            <img src="assets/img/headshot.jpg" alt="Portrait of Matthias Dogbatsey" class="hero-headshot" width="240"
-              height="240" style="margin-bottom: 1rem; border-radius: var(--radius-lg);" />
-            <div>
-              <div class="hero-photo-meta">
-                <span class="hero-photo-name" style="display:block; font-weight: bold; font-size: 1.2rem;">Matthias
-                  Dogbatsey</span>
-                <span class="hero-photo-title" style="display:block; color: var(--text-muted);">Ph.D. Candidate,
-                  Mathematics</span>
-                <span class="hero-photo-title" style="display:block; color: var(--text-muted);">University of
-                  Alabama</span>
-              </div>
-              <div class="hero-social" style="margin-top: 1rem;">
-                <a href="mailto:mdogbatsey@crimson.ua.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=avyudjUAAAAJ&hl=en" target="_blank" rel="noopener"
-                  aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://github.com/mdogbatsey" target="_blank" rel="noopener" aria-label="GitHub"><i
-                    class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mdogbatsey" target="_blank" rel="noopener" aria-label="LinkedIn"><i
-                    class="fab fa-linkedin-in"></i></a>
-                <a href="https://orcid.org/0000-0001-6905-6684" target="_blank" rel="noopener" aria-label="ORCID"><i
-                    class="fab fa-orcid"></i></a>
-                <a href="https://www.researchgate.net/profile/Matthias-Dogbatsey" target="_blank" rel="noopener"
-                  aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
-              </div>
-            </div>
-          </div>
-          <div style="flex: 1; min-width: 300px;">
-            <h1 class="section-heading" style="margin-top: 0;">About Me</h1>
+        <h1 class="section-heading about-title">About Me</h1>
+        <div class="card about-hero-card">
+          <div class="about-hero-content">
             <p>
-              I am a Ph.D. candidate of Mathematics in the
-              <a href="https://math.ua.edu" target="_blank" rel="noopener">Department of Mathematics</a> at the
-              <a href="https://www.ua.edu" target="_blank" rel="noopener">University of Alabama</a>,
-              working under the supervision of
-              <a href="https://sites.ua.edu/szhao/" target="_blank" rel="noopener">Prof. Shan Zhao</a> and
-              <a href="https://sites.ua.edu/yshao/" target="_blank" rel="noopener">Prof. Yuanzhen Shao</a>.
+              I am a Ph.D. candidate in Mathematics at the University of Alabama, working under the supervision of Prof. Shan Zhao and Prof. Yuanzhen Shao. My doctoral research focuses on developing fast, robust numerical algorithms for partial differential equations (PDEs), with applications in computational biophysics (biomolecular solvation) and social dynamics modeling.
             </p>
             <p>
-              My research interests include Applied Mathematics, Numerical Analysis, Mathematical Biology, Scientific
-              Computing, and Social Dynamics Modeling.
+              Previously, I earned a B.Sc. in Mathematics with Economics from the University of Cape Coast, an M.Sc. in Mathematical Sciences from AIMS Ghana, and a graduate certificate in Business Management from ESMT Berlin, alongside working as a Sales Operations Analyst at FanMilk Plc.
             </p>
+            <p>
+              Specifically, my current research focuses on:
+            </p>
+            <ul class="research-areas-list">
+              <li><strong>Algorithm Development:</strong> Developing and analyzing fast, robust numerical algorithms for solving complex ordinary and partial differential equations.</li>
+              <li><strong>Computational Biophysics:</strong> Applying these numerical schemes to problems in molecular biology, with a particular emphasis on solvation energy calculations and binding analysis.</li>
+              <li><strong>Social Dynamics Modeling:</strong> Leveraging mathematical epidemiology to study and model complex social phenomena, such as the spread of crime and gang activity.</li>
+            </ul>
           </div>
         </div>
 
-        <h2 class="section-heading" style="font-size: 1.5rem; margin-top: 2rem;">Education</h2>
+        <h2 class="section-heading about-section-heading">Education</h2>
         <div class="card">
-          <ul class="teaching-list">
+          <ul class="education-list">
             <li>
               <strong>Ph.D. in Mathematics</strong> (2027 expected) <br>
               <a href="https://www.ua.edu" target="_blank" rel="noopener">The University of Alabama</a>, Tuscaloosa, AL,
@@ -107,9 +105,9 @@
           </ul>
         </div>
 
-        <h2 class="section-heading" style="font-size: 1.5rem; margin-top: 2rem;">Certificates</h2>
+        <h2 class="section-heading about-section-heading">Certificates</h2>
         <div class="card">
-          <ul class="teaching-list">
+          <ul class="education-list">
             <li>
               <strong>Graduate Certificate in Business Management</strong> (2020) <br>
               <a href="https://nexteinstein.org/?i2=aims-esmt-industry-immersion-program-2" target="_blank"
@@ -124,15 +122,17 @@
           </ul>
         </div>
 
-        <h2 class="section-heading" style="font-size: 1.5rem; margin-top: 2rem;">Funding</h2>
+        <h2 class="section-heading about-section-heading">Funding</h2>
         <div class="card">
-          <ul class="teaching-list">
-            <li style="display: flex; align-items: center; gap: 1rem;">
-              <img src="assets/img/NSF_logo.png" alt="NSF Logo" style="width: 48px; height: auto;" />
-              <!-- <div>
+          <ul class="education-list" style="border: none;">
+            <li class="funding-item" style="border: none; padding: 0.5rem 0;">
+              <img src="assets/img/NSF_logo.png" alt="National Science Foundation Logo" class="nsf-logo" />
+<!-- 
+              <div>
                 <strong>National Science Foundation (NSF)</strong> <br>
-                The University of Alabama, Department of Mathematics
-              </div> -->
+                Supported under research grants in the Department of Mathematics.
+              </div>
+ -->
             </li>
           </ul>
         </div>
