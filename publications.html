@@ -110,6 +110,7 @@
   <div class="scroll-progress-container">
     <div class="scroll-progress-bar"></div>
   </div>
+  <!-- BEGIN HEADER: managed by scripts/build_partials.py — edit partials/header.html instead -->
   <header class="site-header">
     <nav class="nav" aria-label="Main Navigation">
       <button class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false">
@@ -134,6 +135,7 @@
       </div>
     </nav>
   </header>
+  <!-- END HEADER -->
 
   <main class="main" id="main-content">
     <section class="section">
@@ -161,7 +163,7 @@
 
           <ul class="pub-list" id="journal-articles-list">
 
-            <li>
+            <li id="pub-jcam26">
               <div class="pub-citation">
                 <strong>M. Dogbatsey</strong>, Z. Chen, Y. Shao, and S. Zhao,
                 <a href="files/jcam26.pdf" target="_blank" rel="noopener">Numerical solution to the three-dimensional
@@ -226,7 +228,7 @@
                 Optimal Control and Cost-Effectiveness Analysis of Fear in Crime Dynamics.
               </div>
             </li>
-            <li>
+            <li id="pub-pb-submitted">
               <div class="pub-citation">
                 <span class="pub-status-badge submitted">Submitted</span>
                 <strong>M. Dogbatsey</strong>, Y. Shao, E. Alexov, and S. Zhao,
@@ -251,6 +253,7 @@
     </section>
   </main>
 
+  <!-- BEGIN FOOTER: managed by scripts/build_partials.py — edit partials/footer.html instead -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -287,6 +290,7 @@
       </div>
     </div>
   </footer>
+  <!-- END FOOTER -->
   <script>
     (function () {
       var items = document.querySelectorAll('#journal-articles-list li');

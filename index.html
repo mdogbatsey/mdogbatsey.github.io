@@ -64,6 +64,7 @@
 
   <script defer src="assets/js/bg-animation.js"></script>
 
+  <!-- BEGIN HEADER: managed by scripts/build_partials.py — edit partials/header.html instead -->
   <header class="site-header">
     <nav class="nav" aria-label="Main Navigation">
       <button class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false">
@@ -88,6 +89,7 @@
       </div>
     </nav>
   </header>
+  <!-- END HEADER -->
 
   <main class="main" id="main-content">
 
@@ -97,8 +99,11 @@
         
         <!-- Left: Headshot -->
         <div class="hero-headshot-wrap">
-          <img src="assets/img/headshot.jpg" alt="Portrait of Matthias Dogbatsey" class="hero-headshot" width="220"
-            height="220" fetchpriority="high" />
+          <picture>
+            <source srcset="assets/img/headshot.webp" type="image/webp" />
+            <img src="assets/img/headshot.jpg" alt="Portrait of Matthias Dogbatsey" class="hero-headshot" width="220"
+              height="220" fetchpriority="high" />
+          </picture>
           <div class="hero-social">
             <a href="mailto:mdogbatsey@crimson.ua.edu" aria-label="Email">
               <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -221,6 +226,7 @@
 
   </main>
 
+  <!-- BEGIN FOOTER: managed by scripts/build_partials.py — edit partials/footer.html instead -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -257,6 +263,7 @@
       </div>
     </div>
   </footer>
+  <!-- END FOOTER -->
 
 </body>
 

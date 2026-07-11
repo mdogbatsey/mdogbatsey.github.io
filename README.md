@@ -33,3 +33,20 @@ My research focuses on developing high-order numerical schemes for partial diffe
 <!-- <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=mdogbatsey&show_icons=true&theme=minimal" alt="Matthias's GitHub stats" />
 </p> -->
+
+---
+
+### 🧩 Maintaining this site
+
+This is a plain static HTML site (no build step at deploy time), but the nav
+and footer are kept as single-source-of-truth files so they can't drift
+between pages:
+
+- Edit `partials/header.html` or `partials/footer.html`.
+- Run `python3 scripts/build_partials.py` to propagate the change into every
+  page (between the `BEGIN/END` marker comments in each `.html` file).
+- `python3 scripts/build_partials.py --check` exits non-zero if any page is
+  out of sync — useful to run before committing.
+
+`404.html` intentionally has a different nav (it's a noindex error page), so
+it only picks up the shared footer.

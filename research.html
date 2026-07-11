@@ -31,6 +31,7 @@
   <div class="scroll-progress-container">
     <div class="scroll-progress-bar"></div>
   </div>
+  <!-- BEGIN HEADER: managed by scripts/build_partials.py — edit partials/header.html instead -->
   <header class="site-header">
     <nav class="nav" aria-label="Main Navigation">
       <button class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false">
@@ -55,6 +56,7 @@
       </div>
     </nav>
   </header>
+  <!-- END HEADER -->
 
   <main class="main" id="main-content">
     <section class="section">
@@ -111,6 +113,10 @@
               <span class="pill">Free Energy</span>
               <span class="pill">Protein Engineering</span>
             </div>
+            <p style="margin-top: 0.85rem; font-size: 0.85rem;">
+              <a href="publications.html#pub-pb-submitted">Related manuscript: On calculating polar solvation energy
+                of nonrigid proteins in the Poisson-Boltzmann theory (submitted) →</a>
+            </p>
           </div>
 
           <div class="card" style="height: 100%;">
@@ -123,6 +129,10 @@
               <span class="pill">ADI Methods</span>
               <span class="pill">MIB Method</span>
             </div>
+            <p style="margin-top: 0.85rem; font-size: 0.85rem;">
+              <a href="publications.html#pub-jcam26">Related paper: Numerical solution to the three-dimensional
+                p-Laplace equation (JCAM, 2026) →</a>
+            </p>
           </div>
         </div>
 
@@ -159,8 +169,11 @@
         <h2 class="section-heading section-heading--spaced">Selected Visualizations</h2>
         <div class="image-grid">
           <div class="image-card">
-            <img src="assets/img/research/451c.png" alt="Electrostatic potential of protein 451c" width="800"
-              height="600" loading="lazy" />
+            <picture>
+              <source srcset="assets/img/research/451c.webp" type="image/webp" />
+              <img src="assets/img/research/451c.png" alt="Electrostatic potential of protein 451c" width="800"
+                height="600" loading="lazy" />
+            </picture>
             <div class="image-card-caption">
               <strong>Electrostatic Analysis</strong>
               Electrostatic surface potential of protein 451c (PDB ID) mapped onto surface generated after solving the
@@ -168,8 +181,11 @@
             </div>
           </div>
           <div class="image-card">
-            <img src="assets/img/research/cpu.png" alt="Comparison of numerical schemes for p-Laplace equation"
-              width="800" height="600" loading="lazy" />
+            <picture>
+              <source srcset="assets/img/research/cpu.webp" type="image/webp" />
+              <img src="assets/img/research/cpu.png" alt="Comparison of numerical schemes for p-Laplace equation"
+                width="800" height="600" loading="lazy" />
+            </picture>
             <div class="image-card-caption">
               <strong>Numerical Scheme Efficiency</strong>
               Comparison of ADI, Crank-Nicolson, and Picard's Iteration for solving the p-Laplace equation across 23
@@ -179,8 +195,11 @@
             </div>
           </div>
           <div class="image-card">
-            <img src="assets/img/research/crime.png" alt="Schematic diagram of crime dynamics" width="800" height="600"
-              loading="lazy" />
+            <picture>
+              <source srcset="assets/img/research/crime.webp" type="image/webp" />
+              <img src="assets/img/research/crime.png" alt="Schematic diagram of crime dynamics" width="800"
+                height="600" loading="lazy" />
+            </picture>
             <div class="image-card-caption">
               <strong>Social Dynamics</strong>
               Compartmental model depicting how crime and criminal activity propagate through a community under various
@@ -195,6 +214,7 @@
     </section>
   </main>
 
+  <!-- BEGIN FOOTER: managed by scripts/build_partials.py — edit partials/footer.html instead -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -231,6 +251,7 @@
       </div>
     </div>
   </footer>
+  <!-- END FOOTER -->
 </body>
 
 </html>
