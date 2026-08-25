@@ -8,12 +8,12 @@
   <meta charset="UTF-8" />
   <title>Research | Matthias Dogbatsey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Research by Matthias Dogbatsey: Numerical methods for PDEs (p-Laplace, ADI, MIB), biomolecular solvation models, and social dynamics modeling." />
+  <meta name="description" content="Research by Matthias Dogbatsey: numerical methods for PDEs (p-Laplace, ADI, MIB), biomolecular solvation models, and mathematical epidemiology (compartmental transmission models, reproduction numbers, and optimal control)." />
   <meta name="author" content="Matthias Dogbatsey" />
   <meta property="og:title" content="Research | Matthias Dogbatsey" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://mdogbatsey.github.io/research.html" />
-  <meta property="og:description" content="High-Order Numerical Schemes, Biomolecular Solvation, and Social Dynamics Modeling." />
+  <meta property="og:description" content="High-order numerical schemes, biomolecular solvation, and mathematical epidemiology." />
   <meta property="og:image" content="https://mdogbatsey.github.io/assets/img/headshot.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mdogbatsey" />
@@ -63,17 +63,22 @@
       <div class="container">
         <div class="page-head">
           <h1 class="display-title">Computation for science</h1>
-          <p class="lead">Scientific computing, mathematical modeling, and mathematical biology.</p>
+          <p class="lead">Numerical methods for PDEs in computational biophysics, and compartmental models of
+            transmission and control.</p>
         </div>
 
         <!-- Overview -->
         <div class="card">
           <h3>Focus Areas</h3>
           <p>
-            My work involves developing and implementing advanced numerical methods, finite difference schemes, Matched
-            Interface and Boundary (MIB) methods, and Finite Element Methods (FEM), to solve multidimensional partial
-            differential equations on high-performance computing platforms. Applications span drug design, protein
-            engineering, and mathematical modeling of social systems.
+            I develop and implement numerical methods for multidimensional partial differential equations: finite
+            difference schemes, Matched Interface and Boundary (MIB) methods, and finite element methods, run on
+            high-performance computing platforms. The applications are in drug design and protein engineering.
+          </p>
+          <p>
+            A separate part of my work uses compartmental dynamical systems, where the questions are about thresholds
+            and control: what the reproduction number is, whether the endemic equilibrium is stable, and which
+            intervention strategy is worth what it costs.
           </p>
           <div class="focus-area-grid">
             <div class="focus-area-card">
@@ -92,9 +97,10 @@
                 (ADI) methods.</span>
             </div>
             <div class="focus-area-card">
-              <strong class="focus-area-title">Mathematical Modeling</strong>
-              <span class="focus-area-desc">Social dynamics modeling, gang dynamics, crime curtailment, intervention
-                strategy analysis.</span>
+              <strong class="focus-area-title">Mathematical Epidemiology</strong>
+              <span class="focus-area-desc">Compartmental transmission models, reproduction numbers via the
+                next-generation matrix, stability and bifurcation analysis, optimal control and cost-effectiveness of
+                intervention strategies.</span>
             </div>
           </div>
         </div>
@@ -136,17 +142,40 @@
           </div>
         </div>
 
-        <div class="card" style="margin-top: 1.25rem;">
-          <h3>Social Dynamics Modeling</h3>
-          <p>Beyond physics-based modeling, I apply ODE systems to understand social phenomena. Recent work assesses the
-            impact of intervention programs on <strong>gang dynamics</strong> using mathematical modeling approaches
-            adapted from epidemiological compartmental models.</p>
-          <div class="pill-row" style="margin-top: 1rem;">
-            <span class="pill">ODE Systems</span>
-            <span class="pill">Gang Dynamics</span>
-            <span class="pill">Compartmental Models</span>
-            <span class="pill">Stability Analysis</span>
+        <div class="card" id="epidemiology" style="margin-top: 1.25rem;">
+          <h3>Mathematical Epidemiology &amp; Transmission Dynamics</h3>
+          <p>
+            I build and analyze <strong>nonlinear compartmental models</strong> of spread through a structured
+            population. The analysis follows a familiar course: positivity and boundedness of solutions, the
+            reproduction number from the <strong>next-generation matrix</strong>, then the disease-free and endemic
+            equilibria and their local and global stability, usually by Lyapunov arguments. I also check for
+            <strong>backward bifurcation</strong>, since where it occurs, pushing the reproduction number below one is
+            no longer enough to eliminate the disease. <strong>Optimal control</strong> and
+            <strong>cost-effectiveness analysis</strong> come last, to rank the candidate interventions.
+          </p>
+
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.6rem; font-size: 0.95rem;">Methods</h4>
+          <div class="pill-row">
+            <span class="pill">Compartmental ODE Models</span>
+            <span class="pill">Next-Generation Matrix</span>
+            <span class="pill">Reproduction Number</span>
+            <span class="pill">Equilibrium &amp; Stability Analysis</span>
+            <span class="pill">Backward Bifurcation</span>
+            <span class="pill">Optimal Control</span>
+            <span class="pill">Cost-Effectiveness Analysis</span>
+            <span class="pill">Sensitivity Analysis</span>
           </div>
+
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.6rem; font-size: 0.95rem;">Related work</h4>
+          <ul class="simple-list" style="font-size: 0.88rem;">
+            <li>
+              <a href="publications.html#pub-fams23">Curtailing crime dynamics: A mathematical approach</a>
+            </li>
+            <li>
+              <a href="publications.html#pub-fear-submitted">Optimal Control and Cost-Effectiveness Analysis of
+                Fear in Crime Dynamics</a> &mdash; submitted (2026).
+            </li>
+          </ul>
         </div>
 
         <!-- Computational Tools -->
@@ -157,6 +186,8 @@
             <span class="pill">MATLAB</span>
             <span class="pill">Python</span>
             <span class="pill">R</span>
+            <span class="pill">APBS</span>
+            <span class="pill">DelPhi</span>
             <span class="pill">VMD</span>
             <span class="pill">HPC / Slurm</span>
             <span class="pill">Finite Difference Methods</span>
@@ -201,9 +232,9 @@
                 height="600" loading="lazy" />
             </picture>
             <div class="image-card-caption">
-              <strong>Social Dynamics</strong>
-              Compartmental model depicting how crime and criminal activity propagate through a community under various
-              intervention strategies.
+              <strong>Compartmental Transmission Model</strong>
+              Flow diagram for the crime dynamics model, showing how intervention strategies change the transfer
+              rates between compartments.
               <a href="https://doi.org/10.3389/fams.2022.1086745" target="_blank" rel="noopener"
                 style="display:block;margin-top:0.4rem;font-size:0.8rem;">View paper →</a>
             </div>

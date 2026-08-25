@@ -1,15 +1,15 @@
 # Hi there, I'm Matthias Dogbatsey! 👋
 
-I am a **Ph.D. Candidate in Mathematics** at the [University of Alabama](https://www.ua.edu), specializing in **Scientific Computing**, **Mathematical Biology**, and **Numerical Analysis**.
+I am a **Ph.D. Candidate in Mathematics** at the [University of Alabama](https://www.ua.edu), working in **Scientific Computing**, **Numerical Analysis**, and **Mathematical Epidemiology**.
 
-My research focuses on developing high-order numerical schemes for partial differential equations (PDEs), with applications in biomolecular solvation (Poisson-Boltzmann) and hyperbolic conservation laws (Euler equations).
+My research focuses on numerical schemes for partial differential equations (PDEs), with applications in biomolecular solvation (Poisson-Boltzmann), alongside compartmental modeling of transmission and control.
 
 ---
 
 ### 🔭 Current Research
 - **Continuum Solvation Models:** Developing variational implicit solvent models using Size-Modified Poisson-Boltzmann theory.
 - **Numerical Methods:** Implementation of MIB (Matched Interface and Boundary) and ADI (Alternating Direction Implicit) methods.
-- **Social Dynamics:** Mathematical modeling of gang dynamics and intervention strategies.
+- **Mathematical Epidemiology:** Compartmental models of transmission and control, with reproduction numbers, stability and bifurcation analysis, and optimal control.
 
 ### 🛠️ Languages & Tools
 <p>

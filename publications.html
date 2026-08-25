@@ -8,12 +8,12 @@
   <meta charset="UTF-8" />
   <title>Publications | Matthias Dogbatsey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Peer-reviewed publications by Matthias Dogbatsey: Numerical solutions to p-Laplace equations and mathematical modeling of crime dynamics." />
+  <meta name="description" content="Peer-reviewed publications by Matthias Dogbatsey: numerical solutions to p-Laplace equations, Poisson-Boltzmann solvation theory, and compartmental epidemiological modeling." />
   <meta name="author" content="Matthias Dogbatsey" />
   <meta property="og:title" content="Publications | Matthias Dogbatsey" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://mdogbatsey.github.io/publications.html" />
-  <meta property="og:description" content="Peer-reviewed publications in Scientific Computing and Mathematical Biology." />
+  <meta property="og:description" content="Peer-reviewed publications in scientific computing, computational biophysics, and mathematical epidemiology." />
   <meta property="og:image" content="https://mdogbatsey.github.io/assets/img/headshot.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mdogbatsey" />
@@ -173,12 +173,20 @@
               </div>
               <details class="pub-abstract">
                 <summary>Abstract</summary>
-                <p>We develop and analyze finite difference methods for the three-dimensional p-Laplace equation, a
-                  nonlinear generalization of the Laplacian with applications in biomolecular surface generation and
-                  electrostatic analysis. Efficient ADI, Crank–Nicolson, and Picard iterative schemes are implemented
-                  and benchmarked across 23 benchmark proteins. The ADI method is shown to be the most computationally
-                  efficient, enabling accurate electrostatic potential calculations for drug design and protein
-                  engineering on high-performance computing platforms.</p>
+                <p>Solving the nonlinear and degenerate <em>p</em>-Laplace equation numerically is highly
+                  challenging, yet it has numerous applications across various fields. In this work, we propose and
+                  explore numerical schemes, including Picard's Iteration scheme, Crank-Nicolson (CN) method, and
+                  Alternating Direction Implicit (ADI) scheme, for solving the <em>p</em>-Laplace equation in
+                  &#8477;<sup>3</sup> for <em>p</em> &isin; [1, 2), aiming to identify the most effective numerical
+                  approaches within the framework of finite difference methods. In the existing literature, studies on
+                  the parabolic <em>p</em>-Laplace equation primarily consider the Cauchy problem with <em>p</em> &ge;
+                  2. Our study bridges this gap by examining the parabolic <em>p</em>-Laplace equation for <em>p</em>
+                  &isin; [1, 2). To our knowledge, this is the first comprehensive study on the three-dimensional (3D)
+                  case. Our results demonstrate that the ADI scheme is the most efficient among the proposed 3D
+                  numerical schemes as it requires the least computational time while maintaining comparable accuracy
+                  in both analytical tests and solvation energy calculations. Moreover, we numerically verify that the
+                  solution of the pseudo-time parabolic <em>p</em>-Laplace equation converges to the solution of the
+                  corresponding highly nonlinear elliptic <em>p</em>-Laplace equation.</p>
               </details>
               <div class="pub-links">
                 <a href="files/jcam26.pdf" class="pub-btn" target="_blank" rel="noopener">PDF</a>
@@ -188,7 +196,7 @@
               </div>
             </li>
 
-            <li>
+            <li id="pub-fams23">
               <div class="pub-citation">
                 T. Kwofie, <strong>M. Dogbatsey</strong>, and S. E. Moore,
                 <a href="files/fams24.pdf" target="_blank" rel="noopener">Curtailing crime dynamics: A mathematical
@@ -198,12 +206,28 @@
               </div>
               <details class="pub-abstract">
                 <summary>Abstract</summary>
-                <p>We propose a compartmental ODE model for the dynamics of criminal activity and gang membership,
-                  adapted from epidemiological frameworks. The model incorporates recruitment, rehabilitation, and
-                  law-enforcement intervention parameters. Stability analysis identifies reproduction numbers governing
-                  long-term crime persistence. Numerical simulations demonstrate that targeted rehabilitation programs
-                  combined with early intervention achieve the most significant reductions in criminal activity,
-                  providing quantitative guidance for policy design.</p>
+                <p><strong>Introduction:</strong> Crime and criminal activities have huge influences on society and
+                  societal development. The social makeup of the society has a significant impact on the propagation of
+                  crime within a population. It is a well-known reality that crime spreads across society like an
+                  infectious disease, despite the fact that there are many elements that might affect this dynamic. So,
+                  understanding crime and the factors influencing its spread are essential in formulating policies to
+                  reduce the prevalence and impacts of crime.</p>
+                <p><strong>Methods:</strong> We formulate a deterministic mathematical model using a system of
+                  nonlinear ordinary differential equations incorporating education programs as tools to assess the
+                  population-level impact on the spread of crime. The model has a global asymptotically stable
+                  crime-free equilibrium whenever a certain criminological threshold, known as the effective
+                  reproduction number &#8475;<sub><em>E</em></sub>, is less than unity.</p>
+                <p><strong>Results and discussion:</strong> The model is fitted with prison data reported from July
+                  2021 to June 2022 by the State of Illinois in The United States. The simulations are carried out to
+                  assess the population-level impact of the widespread use of the intervention programs and the
+                  compliance rate in the State of Illinois. We hypothetically fixed the efficacy of the intervention
+                  programs at 25% while varying the compliance rate (by the general public). With no compliance, a high
+                  level of active criminal population was recorded. As the compliance rates were significantly
+                  improved, the active population level decreased. The global sensitivity analysis is performed
+                  primarily to determine the parameters with the most effect on the spread of crime in the State of
+                  Illinois. The results demonstrate that the effective community contact rate,
+                  &beta;<sub><em>C</em></sub>, for the criminally active individuals is the main driver of crime in the
+                  State of Illinois.</p>
               </details>
               <div class="pub-links">
                 <a href="files/fams24.pdf" class="pub-btn" target="_blank" rel="noopener">PDF</a>
@@ -221,10 +245,10 @@
             <span class="card-section-title">Submitted &amp; In Preparation</span>
           </div>
           <ul class="pub-list">
-            <li>
+            <li id="pub-fear-submitted">
               <div class="pub-citation">
                 <span class="pub-status-badge submitted">Submitted</span>
-                T. Kwofie, <strong>M. Dogbatsey</strong>, A. Adom-Konadu, J. Asamoah, S. E. Moore,
+                T. Kwofie, <strong>M. Dogbatsey</strong>, A. Adom-Konadu, J. K. K. Asamoah, S. E. Moore,
                 Optimal Control and Cost-Effectiveness Analysis of Fear in Crime Dynamics.
               </div>
             </li>
