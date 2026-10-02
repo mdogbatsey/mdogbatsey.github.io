@@ -213,28 +213,71 @@
           </div>
           <div class="image-card">
             <picture>
-              <source srcset="assets/img/research/cpu.webp" type="image/webp" />
-              <img src="assets/img/research/cpu.png" alt="Comparison of numerical schemes for p-Laplace equation"
-                width="800" height="600" loading="lazy" />
+              <source srcset="assets/img/research/diatom-pm.webp" type="image/webp" />
+              <img src="assets/img/research/diatom-pm.png"
+                alt="Diatom molecular surfaces generated with p-Laplace exponents 2.00, 1.33, 1.20 and 1.00" width="800"
+                height="600" loading="lazy" />
             </picture>
             <div class="image-card-caption">
-              <strong>Numerical Scheme Efficiency</strong>
-              Comparison of ADI, Crank-Nicolson, and Picard's Iteration for solving the p-Laplace equation across 23
-              proteins. ADI proves computationally most efficient.
+              <strong>Molecular Surfaces from the p-Laplacian</strong>
+              Isosurfaces of a diatom system as the exponent p<sub>m</sub> goes from 2 to 1. As p<sub>m</sub> approaches 1,
+              surface area and enclosed volume converge to the reference values.
               <a href="https://doi.org/10.1016/j.cam.2025.117270" target="_blank" rel="noopener"
                 style="display:block;margin-top:0.4rem;font-size:0.8rem;">View paper →</a>
             </div>
           </div>
           <div class="image-card">
             <picture>
-              <source srcset="assets/img/research/crime.webp" type="image/webp" />
-              <img src="assets/img/research/crime.png" alt="Schematic diagram of crime dynamics" width="800"
+              <source srcset="assets/img/research/cpu-all3.webp" type="image/webp" />
+              <img src="assets/img/research/cpu-all3.png"
+                alt="CPU time against number of atoms for Picard iteration, ADI and Crank-Nicolson" width="800"
                 height="600" loading="lazy" />
             </picture>
+            <div class="image-card-caption">
+              <strong>Numerical Scheme Efficiency</strong>
+              CPU time for ADI, Crank-Nicolson, and Picard iteration on the p-Laplace equation across 23 proteins.
+              ADI is the fastest of the three at every problem size.
+              <a href="https://doi.org/10.1016/j.cam.2025.117270" target="_blank" rel="noopener"
+                style="display:block;margin-top:0.4rem;font-size:0.8rem;">View paper →</a>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/img/research/crime.svg" alt="Flow diagram of the crime dynamics model" width="800"
+              height="600" loading="lazy" />
             <div class="image-card-caption">
               <strong>Compartmental Transmission Model</strong>
               Flow diagram for the crime dynamics model, showing how intervention strategies change the transfer
               rates between compartments.
+              <a href="https://doi.org/10.3389/fams.2022.1086745" target="_blank" rel="noopener"
+                style="display:block;margin-top:0.4rem;font-size:0.8rem;">View paper →</a>
+            </div>
+          </div>
+          <div class="image-card">
+            <picture>
+              <source srcset="assets/img/research/re-contour.webp" type="image/webp" />
+              <img src="assets/img/research/re-contour.png"
+                alt="Contour plot of the effective reproduction number against intervention efficacy and compliance rate"
+                width="800" height="600" loading="lazy" />
+            </picture>
+            <div class="image-card-caption">
+              <strong>Reproduction Number Under Control</strong>
+              The effective reproduction number R<sub>E</sub> as a function of intervention efficacy (ε) and
+              compliance rate (η). Both have to be high before R<sub>E</sub> falls substantially.
+              <a href="https://doi.org/10.3389/fams.2022.1086745" target="_blank" rel="noopener"
+                style="display:block;margin-top:0.4rem;font-size:0.8rem;">View paper →</a>
+            </div>
+          </div>
+          <div class="image-card">
+            <picture>
+              <source srcset="assets/img/research/prcc.webp" type="image/webp" />
+              <img src="assets/img/research/prcc.png"
+                alt="Bar chart of partial rank correlation coefficients for the crime model parameters" width="800"
+                height="600" loading="lazy" />
+            </picture>
+            <div class="image-card-caption">
+              <strong>Global Sensitivity Analysis</strong>
+              Partial rank correlation coefficients (PRCCs) from Latin Hypercube Sampling, ranking how strongly each
+              parameter drives the criminal population.
               <a href="https://doi.org/10.3389/fams.2022.1086745" target="_blank" rel="noopener"
                 style="display:block;margin-top:0.4rem;font-size:0.8rem;">View paper →</a>
             </div>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="67 57 661 496" width="800" height="600" role="img" aria-labelledby="t">
+  <title id="t">Flow diagram of the crime dynamics model with compartments S, C, P and R</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#3a4250"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#a67c2f"/>
+    </marker>
+  </defs>
+  <rect x="67" y="57" width="661" height="496" fill="#ffffff"/>
+  <g transform="translate(40,-20)" font-family="Lora, Georgia, 'Times New Roman', serif" font-style="italic" font-size="28" fill="#131c2e">
+    <!-- transfers between compartments -->
+    <g stroke="#3a4250" stroke-width="2.5" fill="none" marker-end="url(#a)">
+      <line x1="270" y1="220" x2="528" y2="220"/>
+      <line x1="594" y1="268" x2="594" y2="380"/>
+      <line x1="566" y1="382" x2="566" y2="270"/>
+      <line x1="530" y1="430" x2="272" y2="430"/>
+      <line x1="542.8" y1="255.6" x2="271" y2="414"/>
+      <line x1="257.2" y1="394.4" x2="529" y2="236"/>
+      <line x1="220" y1="380" x2="220" y2="272"/>
+    </g>
+    <!-- recruitment and removal -->
+    <g stroke="#a67c2f" stroke-width="2.5" fill="none" marker-end="url(#g)">
+      <line x1="70" y1="220" x2="168" y2="220"/>
+      <line x1="220" y1="170" x2="220" y2="95"/>
+      <line x1="580" y1="170" x2="580" y2="95"/>
+      <line x1="220" y1="480" x2="220" y2="555"/>
+      <line x1="580" y1="480" x2="580" y2="555"/>
+    </g>
+    <!-- compartments -->
+    <g fill="#1e2c44" stroke="#cba85f" stroke-width="3">
+      <circle cx="220" cy="220" r="50"/>
+      <circle cx="580" cy="220" r="50"/>
+      <circle cx="580" cy="430" r="50"/>
+      <circle cx="220" cy="430" r="50"/>
+    </g>
+    <g fill="#fffdf9" font-size="38" text-anchor="middle" dominant-baseline="central">
+      <text x="220" y="220">S</text>
+      <text x="580" y="220">C</text>
+      <text x="580" y="430">P</text>
+      <text x="220" y="430">R</text>
+    </g>
+    <!-- rates -->
+    <text x="400" y="205" text-anchor="middle">λS</text>
+    <text x="610" y="332">αC</text>
+    <text x="550" y="332" text-anchor="end">ωP</text>
+    <text x="400" y="460" text-anchor="middle">γP</text>
+    <text x="420" y="362" text-anchor="middle">τC</text>
+    <text x="382" y="295" text-anchor="middle">θνR</text>
+    <text x="204" y="332" text-anchor="end">(1 − θ)νR</text>
+    <g fill="#8a6a2b">
+      <text x="118" y="205" text-anchor="middle">Λ</text>
+      <text x="236" y="135">μS</text>
+      <text x="596" y="135">μC</text>
+      <text x="236" y="525">μR</text>
+      <text x="596" y="525">μP</text>
+    </g>
+  </g>
+</svg>
